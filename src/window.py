@@ -105,7 +105,7 @@ aim_ray_offsets = [math.atan((2 * i / RENDER_W - 1) * TAN_HALF_AIM_FOV) for i in
 aim_ray_cos = np.cos(aim_ray_offsets)
 aim_ray_sin = np.sin(aim_ray_offsets)
 
-mm_base = game_map.minimap(2)
+mm_base = game_map.minimap(1)
 
 impact_particles = []
 
@@ -759,14 +759,14 @@ def draw_hud(surf, w, h):
     surf.blit(cached_weapon_surf, (w // 2 - cached_weapon_surf.get_width() // 2, 16))
 
     overlay = mm_base.copy()
-    mm_px = int(px * 2)
-    mm_py = int(py * 2)
-    pg.draw.circle(overlay, (255, 60, 60), (mm_px, mm_py), 3)
+    mm_px = int(px)
+    mm_py = int(py)
+    pg.draw.circle(overlay, (255, 60, 60), (mm_px, mm_py), 2)
     pg.draw.line(overlay, (255, 255, 100), (mm_px, mm_py),
-                 (mm_px + int(pdx * 4), mm_py + int(pdy * 4)), 2)
+                 (mm_px + int(pdx * 3), mm_py + int(pdy * 3)), 2)
     for t in targets:
-        tx = int(t.x * 2)
-        ty = int(t.y * 2)
+        tx = int(t.x)
+        ty = int(t.y)
         if t.alive:
             hp_pct = t.hp / t.max_hp
             if hp_pct > 0.5:
