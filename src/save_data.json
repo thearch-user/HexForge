@@ -1,13 +1,17 @@
 {
-  "money": 500,
+  "money": 1000000000000,
   "owned_weapons": [
-    "AK47",
-    "Glock19"
+    "AK47"
   ],
   "equipped_primary": "AK47",
   "equipped_secondary": "Glock19",
   "equipped_melee": "Knife",
   "equipped_explosive": "Grenade",
+  "equipped_primary_alt": "M16AI",
+  "equipped_secondary_alt": "DesertEagle",
+  "equipped_melee_alt": "Katana",
+  "equipped_explosive_alt": "Molotov",
   "grenades": 3,
+  "molotovs": 3,
   "upgrades": {}
 }

@@ -23,6 +23,8 @@ class BaseWeapon:
         self.shooting = False
         self.is_melee = False
         self.is_throwable = False
+        self.pellets = 1
+        self.spread = 0.0
 
     def shoot(self):
         if self.reloading or self.fire_cooldown > 0 or self.ammo <= 0:
@@ -375,6 +377,270 @@ class Grenade(BaseWeapon):
         self.draw_reload_bar(screen, width, height)
 
 
+class M16AI(BaseWeapon):
+    def __init__(self):
+        super().__init__()
+        self.name = "M16AI"
+        self.damage = 22
+        self.fire_rate = 0.14
+        self.mag_size = 30
+        self.ammo = 30
+        self.reserve = 120
+        self.reload_time = 2.2
+        self.pellets = 3
+        self.spread = 0.018
+
+    def apply_upgrades(self, upgrades):
+        if "Extended Mag" in upgrades:
+            self.mag_size = 45
+            self.ammo = min(self.ammo, self.mag_size)
+            self.reserve = max(self.reserve, 135)
+        if "Damage Boost" in upgrades:
+            self.damage = 28
+        if "Rapid Fire" in upgrades:
+            self.fire_rate = 0.1
+
+    def draw(self, screen, width, height):
+        sway_x = math.sin(pg.time.get_ticks() * 0.002) * 1.5 + self.bob_offset
+        sway_y = math.sin(pg.time.get_ticks() * 0.003) * 2 + self.kickback * 1.5
+        bx = width // 2 + sway_x
+        by = height - 140 + sway_y
+
+        stock_pts = [(bx - 30, by - 30), (bx - 74, by - 22), (bx - 78, by - 14), (bx - 30, by - 12)]
+        self._draw_part(screen, stock_pts, (105, 78, 42), (62, 42, 22))
+        self._draw_part(screen, [(bx - 78, by - 14), (bx - 80, by - 2), (bx - 76, by + 20), (bx - 74, by - 10)], (62, 52, 32), (36, 31, 16))
+
+        rec_pts = [(bx - 30, by - 34), (bx + 60, by - 34), (bx + 60, by - 18), (bx - 30, by - 12)]
+        self._draw_part(screen, rec_pts, (60, 62, 60), (38, 40, 38))
+        self._draw_part(screen, [(bx - 30, by - 34), (bx + 60, by - 34), (bx + 56, by - 40), (bx - 24, by - 40)], (72, 74, 72), (46, 48, 46))
+
+        carry_handle = [(bx + 4, by - 46), (bx + 48, by - 46), (bx + 48, by - 40), (bx + 4, by - 40)]
+        self._draw_part(screen, carry_handle, (50, 52, 50), (32, 34, 32))
+        pg.draw.rect(screen, (90, 92, 90), (bx + 16, by - 52, 26, 7))
+
+        barrel_pts = [(bx + 60, by - 32), (bx + 150, by - 28), (bx + 150, by - 24), (bx + 60, by - 26)]
+        self._draw_part(screen, barrel_pts, (50, 52, 50), (32, 34, 32))
+        pg.draw.line(screen, (70, 72, 70), (bx + 62, by - 30), (bx + 148, by - 27), 2)
+
+        hg_pts = [(bx + 18, by - 20), (bx + 58, by - 26), (bx + 58, by - 40), (bx + 18, by - 46), (bx - 12, by - 38), (bx - 12, by - 22)]
+        self._draw_part(screen, hg_pts, (95, 100, 95), (60, 64, 60))
+        for i in range(4):
+            gx = bx + 4 + i * 12
+            pg.draw.line(screen, (75, 80, 75), (gx, by - 24 + i * 2), (gx + 8, by - 38 + i * 2), 1)
+
+        mag_pts = [(bx + 8, by - 18), (bx + 42, by - 18), (bx + 48, by + 12), (bx + 2, by + 12)]
+        self._draw_part(screen, mag_pts, (58, 60, 56), (36, 38, 34))
+
+        self._draw_part(screen, [(bx - 12, by - 12), (bx + 6, by - 12), (bx, by + 16), (bx - 16, by + 14)], (105, 78, 42), (62, 42, 22))
+        self._draw_part(screen, [(bx + 148, by - 32), (bx + 154, by - 32), (bx + 154, by - 24), (bx + 148, by - 24)], (45, 47, 45), (28, 30, 28))
+
+        pg.draw.rect(screen, (42, 44, 42), (bx + 20, by - 48, 7, 4))
+        pg.draw.rect(screen, (60, 62, 60), (bx + 21, by - 47, 5, 2))
+
+        self.draw_muzzle(screen)
+        self.draw_reload_bar(screen, width, height)
+
+
+class DesertEagle(BaseWeapon):
+    def __init__(self):
+        super().__init__()
+        self.name = "DesertEagle"
+        self.damage = 70
+        self.fire_rate = 0.4
+        self.mag_size = 7
+        self.ammo = 7
+        self.reserve = 42
+        self.reload_time = 2.0
+
+    def apply_upgrades(self, upgrades):
+        if "Extended Mag" in upgrades:
+            self.mag_size = 9
+            self.ammo = min(self.ammo, self.mag_size)
+            self.reserve = max(self.reserve, 54)
+        if "Damage Boost" in upgrades:
+            self.damage = 85
+        if "Rapid Fire" in upgrades:
+            self.fire_rate = 0.3
+
+    def draw(self, screen, width, height):
+        sway_x = math.sin(pg.time.get_ticks() * 0.002) * 1.2 + self.bob_offset * 0.8
+        sway_y = math.sin(pg.time.get_ticks() * 0.003) * 1.5 + self.kickback * 1.2
+        bx = width // 2 + sway_x + 20
+        by = height - 100 + sway_y
+
+        slide = [(bx - 22, by - 48), (bx + 56, by - 48), (bx + 56, by - 36), (bx - 22, by - 36)]
+        self._draw_part(screen, slide, (48, 52, 58), (30, 32, 36))
+        self._draw_part(screen, [(bx - 20, by - 47), (bx + 54, by - 47), (bx + 54, by - 43), (bx - 20, by - 43)], (62, 66, 72))
+
+        barrel_tip = [(bx + 56, by - 48), (bx + 66, by - 45), (bx + 66, by - 39), (bx + 56, by - 36)]
+        self._draw_part(screen, barrel_tip, (42, 46, 52), (26, 28, 32))
+
+        self._draw_part(screen, [(bx + 66, by - 43), (bx + 70, by - 42), (bx + 70, by - 39), (bx + 66, by - 40)], (30, 32, 36))
+
+        frame = [(bx - 14, by - 36), (bx + 34, by - 36), (bx + 34, by - 24), (bx - 14, by - 24)]
+        self._draw_part(screen, frame, (70, 66, 58), (44, 40, 34))
+
+        grip_pts = [(bx - 10, by - 24), (bx + 18, by - 24), (bx + 10, by + 26), (bx - 16, by + 24)]
+        self._draw_part(screen, grip_pts, (52, 50, 44), (30, 28, 24))
+        for i in range(5):
+            gy = by - 16 + i * 9
+            pg.draw.line(screen, (40, 38, 32), (bx - 6, gy), (bx + 13, gy + 1), 1)
+
+        mag_pts = [(bx - 4, by - 22), (bx + 20, by - 22), (bx + 18, by + 14), (bx - 2, by + 14)]
+        self._draw_part(screen, mag_pts, (60, 58, 50), (36, 34, 28))
+
+        trigger_guard = [(bx - 10, by - 26), (bx + 8, by - 26), (bx + 6, by - 16), (bx - 6, by - 16)]
+        self._draw_part(screen, trigger_guard, (60, 56, 48))
+        trigger = [(bx - 2, by - 22), (bx + 1, by - 22), (bx, by - 16)]
+        self._draw_part(screen, trigger, (46, 42, 38))
+
+        self._draw_part(screen, [(bx + 6, by - 50), (bx + 10, by - 50), (bx + 10, by - 48), (bx + 6, by - 48)], (42, 46, 52))
+        self._draw_part(screen, [(bx + 48, by - 50), (bx + 52, by - 50), (bx + 52, by - 48), (bx + 48, by - 48)], (42, 46, 52))
+
+        pg.draw.line(screen, (90, 95, 100), (bx - 18, by - 46), (bx + 52, by - 46), 1)
+
+        self.draw_muzzle(screen)
+        self.draw_reload_bar(screen, width, height)
+
+
+class Katana(BaseWeapon):
+    def __init__(self):
+        super().__init__()
+        self.name = "Katana"
+        self.damage = 90
+        self.fire_rate = 0.35
+        self.mag_size = 999
+        self.ammo = 999
+        self.reserve = 999
+        self.reload_time = 0
+        self.is_melee = True
+        self.swing_timer = 0.0
+        self.swinging = False
+        self.swing_phase = 0
+
+    def apply_upgrades(self, upgrades):
+        pass
+
+    def shoot(self):
+        if self.fire_cooldown > 0:
+            return False
+        self.fire_cooldown = self.fire_rate
+        self.swinging = True
+        self.swing_timer = 0.3
+        self.swing_phase = 0
+        return True
+
+    def update(self, dt, moving=False):
+        super().update(dt, moving)
+        if self.swinging:
+            self.swing_timer -= dt
+            self.swing_phase += dt * 20
+            if self.swing_timer <= 0:
+                self.swinging = False
+
+    def draw(self, screen, width, height):
+        bx = width // 2
+        by = height // 2
+
+        bob = self.bob_offset * 0.5
+        sway_x = math.sin(pg.time.get_ticks() * 0.002) * 3 + bob
+        sway_y = math.sin(pg.time.get_ticks() * 0.003) * 2
+
+        if self.swinging:
+            swing = math.sin(self.swing_phase) * 60
+            sway_x += swing * 0.6
+            sway_y -= abs(swing) * 0.35
+
+        ox = bx + 130 + sway_x
+        oy = by + 130 + sway_y
+
+        blade = [
+            (ox - 5, oy - 110), (ox + 5, oy - 110),
+            (ox + 4, oy + 8), (ox - 4, oy + 8),
+        ]
+        self._draw_part(screen, blade, (175, 185, 195), (120, 130, 140))
+        self._draw_part(screen, [(ox - 3, oy - 108), (ox + 3, oy - 108), (ox + 2, oy + 6), (ox - 2, oy + 6)], (205, 212, 220))
+
+        edge_pts = [(ox + 5, oy - 110), (ox + 7, oy - 105), (ox + 6, oy + 8), (ox + 4, oy + 8)]
+        self._draw_part(screen, edge_pts, (155, 165, 175))
+
+        guard = [(ox - 14, oy + 8), (ox + 14, oy + 8), (ox + 14, oy + 15), (ox - 14, oy + 15)]
+        self._draw_part(screen, guard, (150, 110, 30), (100, 70, 20))
+
+        grip = [
+            (ox - 7, oy + 15), (ox + 7, oy + 15),
+            (ox + 5, oy + 55), (ox - 5, oy + 55),
+        ]
+        self._draw_part(screen, grip, (60, 20, 20), (35, 12, 12))
+        for i in range(6):
+            gy = oy + 20 + i * 6
+            pg.draw.line(screen, (110, 90, 30), (ox - 5, gy), (ox + 5, gy), 1)
+
+        pommel = [(ox - 5, oy + 55), (ox + 5, oy + 55), (ox + 4, oy + 62), (ox - 4, oy + 62)]
+        self._draw_part(screen, pommel, (150, 110, 30), (100, 70, 20))
+
+
+class Molotov(BaseWeapon):
+    def __init__(self):
+        super().__init__()
+        self.name = "Molotov"
+        self.damage = 8
+        self.fire_rate = 0.8
+        self.mag_size = 1
+        self.ammo = 1
+        self.reserve = 0
+        self.reload_time = 0
+        self.is_throwable = True
+        self.throw_cooldown = 0.0
+
+    def apply_upgrades(self, upgrades):
+        pass
+
+    def shoot(self):
+        if self.fire_cooldown > 0:
+            return False
+        self.fire_cooldown = self.fire_rate
+        return True
+
+    def update(self, dt, moving=False):
+        super().update(dt, moving)
+        self.throw_cooldown = max(0, self.throw_cooldown - dt)
+
+    def draw(self, screen, width, height):
+        bx = width // 2 + 80
+        by = height - 100
+
+        sway_x = math.sin(pg.time.get_ticks() * 0.002) * 2 + self.bob_offset * 0.6
+        sway_y = math.sin(pg.time.get_ticks() * 0.003) * 1.5
+        bx += int(sway_x)
+        by += int(sway_y)
+
+        bottle = [
+            (bx - 12, by - 26), (bx + 12, by - 26),
+            (bx + 14, by + 20), (bx - 14, by + 20),
+        ]
+        self._draw_part(screen, bottle, (160, 90, 40), (110, 60, 25))
+
+        top = [(bx - 6, by - 32), (bx + 6, by - 32), (bx + 4, by - 26), (bx - 4, by - 26)]
+        self._draw_part(screen, top, (90, 85, 70), (60, 55, 45))
+
+        rag = [(bx - 6, by - 40), (bx + 6, by - 40), (bx + 5, by - 32), (bx - 5, by - 32)]
+        self._draw_part(screen, rag, (130, 130, 120), (90, 90, 80))
+
+        flame_r = int(6 + math.sin(pg.time.get_ticks() * 0.02) * 2)
+        for r in range(flame_r, 0, -1):
+            fc = (255, 150 + r * 12, 60 + r * 10)
+            pg.draw.circle(screen, fc, (bx, by - 46), r)
+
+        liquid = [
+            (bx - 8, by - 18), (bx + 8, by - 18),
+            (bx + 9, by + 14), (bx - 9, by + 14),
+        ]
+        self._draw_part(screen, liquid, (220, 120, 40), (170, 90, 25))
+
+        self.draw_reload_bar(screen, width, height)
+
+
 class ShellEject:
     def __init__(self, x, y):
         self.x = x
@@ -414,4 +680,8 @@ WEAPON_CLASSES = {
     "Glock19": Glock19,
     "Knife": Knife,
     "Grenade": Grenade,
+    "M16AI": M16AI,
+    "DesertEagle": DesertEagle,
+    "Katana": Katana,
+    "Molotov": Molotov,
 }

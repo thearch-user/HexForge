@@ -6,7 +6,7 @@ from config import SCREEN_WIDTH, SCREEN_HEIGHT
 
 
 class Bullet:
-    def __init__(self, x, y, angle):
+    def __init__(self, x, y, angle, damage=22.5):
         self.x = x
         self.y = y
         self.angle = angle
@@ -16,6 +16,7 @@ class Bullet:
         self.trail = []
         self.hit_pos = None
         self.hit_target = None
+        self.damage = damage
 
     def update(self, dt, game_map, targets=None):
         if not self.alive:
@@ -35,7 +36,7 @@ class Bullet:
                 if not t.alive:
                     continue
                 if abs(self.x - t.x) < 0.6 and abs(self.y - t.y) < 0.6:
-                    if t.hit(22.5):
+                    if t.hit(self.damage):
                         self.alive = False
                         self.hit_pos = (self.x, self.y)
                         self.hit_target = t

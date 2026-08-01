@@ -61,10 +61,10 @@ class Map:
 
         rooms = []
         rooms.append((cx, cy))
-        for _ in range(100):
+        for _ in range(150):
             x, y = random.choice(rooms)
             dx, dy = random.choice([(0, 1), (0, -1), (1, 0), (-1, 0)])
-            length = random.randint(6, 20)
+            length = random.randint(8, 30)
             for _ in range(length):
                 nx, ny = x + dx, y + dy
                 if 3 < nx < self.width - 3 and 3 < ny < self.height - 3:
@@ -72,13 +72,15 @@ class Map:
                     self._carve(x, y)
                     self._carve(x + dy, y + dx)
                     self._carve(x - dy, y - dx)
+                    self._carve(x + 2 * dy, y + 2 * dx)
+                    self._carve(x - 2 * dy, y - 2 * dx)
             rooms.append((x, y))
 
-        for _ in range(20):
+        for _ in range(40):
             rx = random.randint(4, self.width - 5)
             ry = random.randint(4, self.height - 5)
-            rw = random.randint(4, 8)
-            rh = random.randint(4, 8)
+            rw = random.randint(5, 12)
+            rh = random.randint(5, 12)
             for ddy in range(-rh // 2, rh // 2 + 1):
                 for ddx in range(-rw // 2, rw // 2 + 1):
                     self._carve(rx + ddx, ry + ddy)
@@ -133,10 +135,10 @@ class Map:
         self.floor_type[sd[1]][sd[0]] = TILE_STAIRS_DOWN
 
     def _add_grass_patches(self):
-        for _ in range(25):
+        for _ in range(60):
             gx = random.randint(5, self.width - 6)
             gy = random.randint(5, self.height - 6)
-            gr = random.randint(2, 4)
+            gr = random.randint(2, 5)
             for dy in range(-gr, gr + 1):
                 for dx in range(-gr, gr + 1):
                     if dx * dx + dy * dy <= gr * gr:
@@ -146,10 +148,10 @@ class Map:
                                 self.floor_type[ny][nx] = TILE_GRASS
 
     def _add_water_features(self):
-        for _ in range(5):
+        for _ in range(15):
             wx = random.randint(8, self.width - 9)
             wy = random.randint(8, self.height - 9)
-            wr = random.randint(2, 3)
+            wr = random.randint(2, 4)
             for dy in range(-wr, wr + 1):
                 for dx in range(-wr, wr + 1):
                     if dx * dx + dy * dy <= wr * wr:

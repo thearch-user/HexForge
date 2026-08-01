@@ -212,7 +212,7 @@ def main_menu():
             b.update(mx, my)
             b.draw()
 
-        hint = font_tiny.render("Press 1-4 to switch weapons in game", True, TEXT_DIM)
+        hint = font_tiny.render("Press 1-8 to switch weapons in game", True, TEXT_DIM)
         screen.blit(hint, (W // 2 - hint.get_width() // 2, H - 30))
 
         pg.display.flip()
@@ -227,13 +227,17 @@ def shop_screen():
     row_gap = 15
 
     owned = game_state.get_owned()
-    upgrades = game_state.get_upgrades("AK47") + game_state.get_upgrades("Glock19") + game_state.get_upgrades("Grenade")
+    upgrades = game_state.get_upgrades("AK47") + game_state.get_upgrades("Glock19") + game_state.get_upgrades("Grenade") + game_state.get_upgrades("Molotov")
 
     weapon_defs = [
         ("AK47", 0, "Primary assault rifle - 30 rounds"),
         ("Glock19", 500, "Secondary pistol - semi-auto"),
         ("Knife", 300, "Melee weapon - close range"),
         ("Grenade", 200, "Throwable explosive - AOE damage"),
+        ("M16AI", 1500, "Burst rifle - 3 rounds per trigger"),
+        ("DesertEagle", 1200, "High-caliber pistol - 7 rounds"),
+        ("Katana", 800, "Razor-sharp melee - heavy damage"),
+        ("Molotov", 400, "Fire bomb - burning ground damage"),
     ]
     for i, (name, price, desc) in enumerate(weapon_defs):
         col = i % 2
@@ -249,6 +253,7 @@ def shop_screen():
         ("Grenade: Extra Nades", 250, "+2 grenades per purchase", "Grenade"),
         ("Grenade: Blast Radius", 500, "Larger explosion radius", "Grenade"),
         ("Grenade: More Damage", 450, "+25 explosion damage", "Grenade"),
+        ("Molotov: Extra Bottles", 300, "+3 molotovs per purchase", "Molotov"),
     ]
     for i, (name, price, desc, weapon) in enumerate(upgrade_defs):
         key = f"{weapon}:{name}"
@@ -299,6 +304,14 @@ def shop_screen():
                                             pass
                                     else:
                                         ok, msg = game_state.buy_upgrade("Grenade", upgrade_name)
+                                elif item.name.startswith("Molotov:"):
+                                    upgrade_name = item.name.replace("Molotov: ", "")
+                                    if upgrade_name == "Extra Bottles":
+                                        ok, msg = game_state.buy_upgrade("Molotov", "Extra Bottles")
+                                        if ok:
+                                            game_state.add_molotovs(3)
+                                    else:
+                                        ok, msg = game_state.buy_upgrade("Molotov", upgrade_name)
                                 else:
                                     ok, msg = game_state.buy_upgrade(weapon_name, item.name)
                                 msg_text = msg
@@ -311,7 +324,7 @@ def shop_screen():
                                 msg_timer = 2.0
                             if ok:
                                 owned = game_state.get_owned()
-                                upgrades = game_state.get_upgrades("AK47") + game_state.get_upgrades("Glock19") + game_state.get_upgrades("Grenade")
+                                upgrades = game_state.get_upgrades("AK47") + game_state.get_upgrades("Glock19") + game_state.get_upgrades("Grenade") + game_state.get_upgrades("Molotov")
                                 for it in items:
                                     if it.name in owned:
                                         it.owned = True
@@ -372,21 +385,28 @@ def loadout_screen():
     btn_back = Button(20, 20, 100, 36, "Back", font_small)
     weapon_cards = []
 
-    card_w = 280
-    card_h = 320
-    gap = 30
+    card_w = 270
+    card_h = 260
+    gap = 25
     total_w = 4 * card_w + 3 * gap
     start_x = (W - total_w) // 2
+    row_y = [100, 390]
 
     weapon_info = [
         ("AK47", "Primary", "Assault Rifle", "30 ammo", (130, 85, 45)),
         ("Glock19", "Secondary", "Pistol", "17 ammo", (65, 62, 55)),
         ("Knife", "Melee", "Close Range", "Infinite", (190, 195, 200)),
         ("Grenade", "Explosive", "Throwable", "3 nades", (70, 85, 55)),
+        ("M16AI", "Primary", "Burst Rifle", "30 ammo", (95, 100, 95)),
+        ("DesertEagle", "Secondary", "Heavy Pistol", "7 ammo", (48, 52, 58)),
+        ("Katana", "Melee", "Close Range", "Infinite", (175, 185, 195)),
+        ("Molotov", "Explosive", "Fire Bomb", "3 nades", (220, 120, 40)),
     ]
     for i, (name, slot, desc, ammo, color) in enumerate(weapon_info):
-        cx = start_x + i * (card_w + gap)
-        cy = 120
+        col = i % 4
+        row = i // 4
+        cx = start_x + col * (card_w + gap)
+        cy = row_y[row]
         weapon_cards.append((pg.Rect(cx, cy, card_w, card_h), name, slot, desc, ammo, color))
 
     while True:
@@ -411,7 +431,7 @@ def loadout_screen():
         screen.blit(title, (W // 2 - title.get_width() // 2, 30))
 
         owned = game_state.get_owned()
-        upgrades_list = game_state.get_upgrades("AK47") + game_state.get_upgrades("Glock19") + game_state.get_upgrades("Grenade")
+        upgrades_list = game_state.get_upgrades("AK47") + game_state.get_upgrades("Glock19") + game_state.get_upgrades("Grenade") + game_state.get_upgrades("Molotov")
 
         for rect, name, slot, desc, ammo, color in weapon_cards:
             is_owned = name in owned
@@ -454,9 +474,28 @@ def loadout_screen():
                 pg.draw.rect(screen, (90, 85, 70), (icon_cx - 8, icon_cy - 22, 16, 8), border_radius=2)
                 for i in range(3):
                     pg.draw.line(screen, (55, 70, 42), (icon_cx - 12, icon_cy - 12 + i * 10), (icon_cx + 12, icon_cy - 12 + i * 10), 1)
+            elif name == "M16AI":
+                pg.draw.rect(screen, color, (icon_cx - 50, icon_cy - 8, 100, 16), border_radius=3)
+                pg.draw.rect(screen, (color[0] - 20, color[1] - 20, color[2] - 20), (icon_cx - 58, icon_cy + 5, 40, 20), border_radius=3)
+                pg.draw.rect(screen, (45, 42, 38), (icon_cx + 42, icon_cy - 6, 30, 12), border_radius=2)
+                pg.draw.rect(screen, (50, 52, 50), (icon_cx + 2, icon_cy - 14, 26, 7), border_radius=2)
+            elif name == "DesertEagle":
+                pg.draw.rect(screen, color, (icon_cx - 38, icon_cy - 12, 76, 20), border_radius=3)
+                pg.draw.rect(screen, (color[0] - 8, color[1] - 8, color[2] - 8), (icon_cx - 26, icon_cy + 6, 26, 34), border_radius=3)
+                pg.draw.rect(screen, (30, 32, 36), (icon_cx + 38, icon_cy - 9, 14, 14), border_radius=2)
+            elif name == "Katana":
+                pts = [(icon_cx, icon_cy - 55), (icon_cx + 6, icon_cy - 52), (icon_cx + 4, icon_cy + 12), (icon_cx - 4, icon_cy + 12)]
+                pg.draw.polygon(screen, color, pts)
+                pg.draw.rect(screen, (150, 110, 30), (icon_cx - 9, icon_cy + 12, 18, 6), border_radius=2)
+                pg.draw.rect(screen, (60, 20, 20), (icon_cx - 7, icon_cy + 18, 14, 30), border_radius=2)
+            elif name == "Molotov":
+                pg.draw.rect(screen, color, (icon_cx - 10, icon_cy - 12, 20, 30), border_radius=5)
+                pg.draw.rect(screen, (90, 85, 70), (icon_cx - 5, icon_cy - 18, 10, 7), border_radius=2)
+                pg.draw.circle(screen, (255, 160, 50), (icon_cx, icon_cy - 24), 6)
+                pg.draw.circle(screen, (255, 200, 80), (icon_cx, icon_cy - 24), 3)
 
             if is_owned and upgrades_list:
-                up_text = [u for u in upgrades_list if name in u or (name == "Grenade" and "Grenade" in u)]
+                up_text = [u for u in upgrades_list if name in u or (name == "Grenade" and "Grenade" in u) or (name == "Molotov" and "Molotov" in u)]
                 if up_text:
                     up_s = font_tiny.render(f"+{len(up_text)} upgrades", True, TEXT_GREEN)
                     screen.blit(up_s, (rect.x + 14, rect.y + rect.h - 25))
@@ -464,7 +503,7 @@ def loadout_screen():
                 lock_s = font_small.render("LOCKED", True, TEXT_RED)
                 screen.blit(lock_s, (rect.x + 14, rect.y + rect.h - 25))
 
-        hint = font_tiny.render("1: AK47  |  2: Glock  |  3: Knife  |  4: Grenade", True, TEXT_DIM)
+        hint = font_tiny.render("1: AK47 | 2: Glock | 3: Knife | 4: Grenade | 5: M16AI | 6: Deagle | 7: Katana | 8: Molotov", True, TEXT_DIM)
         screen.blit(hint, (W // 2 - hint.get_width() // 2, H - 30))
 
         btn_back.update(mx, my)

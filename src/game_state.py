@@ -5,13 +5,18 @@ import copy
 SAVE_FILE = os.path.join(os.path.dirname(__file__), "save_data.json")
 
 DEFAULT_STATE = {
-    "money": 1000,
+    "money": 1000000000000,
     "owned_weapons": ["AK47"],
     "equipped_primary": "AK47",
     "equipped_secondary": "Glock19",
     "equipped_melee": "Knife",
     "equipped_explosive": "Grenade",
+    "equipped_primary_alt": "M16AI",
+    "equipped_secondary_alt": "DesertEagle",
+    "equipped_melee_alt": "Katana",
+    "equipped_explosive_alt": "Molotov",
     "grenades": 3,
+    "molotovs": 3,
     "upgrades": {},
 }
 
@@ -20,6 +25,10 @@ WEAPON_PRICES = {
     "Glock19": 500,
     "Knife": 300,
     "Grenade": 200,
+    "M16AI": 1500,
+    "DesertEagle": 1200,
+    "Katana": 800,
+    "Molotov": 400,
 }
 
 WEAPON_UPGRADES = {
@@ -37,6 +46,9 @@ WEAPON_UPGRADES = {
         "Extra Nades": {"price": 250, "desc": "+2 grenades"},
         "Blast Radius": {"price": 500, "desc": "Larger explosion radius"},
         "More Damage": {"price": 450, "desc": "+25 explosion damage"},
+    },
+    "Molotov": {
+        "Extra Bottles": {"price": 300, "desc": "+3 molotovs"},
     },
 }
 
@@ -144,6 +156,25 @@ def use_grenade():
 def add_grenades(count):
     s = _load()
     s["grenades"] = s.get("grenades", 0) + count
+    _save()
+
+
+def get_molotovs():
+    return _load().get("molotovs", 3)
+
+
+def use_molotov():
+    s = _load()
+    if s["molotovs"] > 0:
+        s["molotovs"] -= 1
+        _save()
+        return True
+    return False
+
+
+def add_molotovs(count):
+    s = _load()
+    s["molotovs"] = s.get("molotovs", 0) + count
     _save()
 
 

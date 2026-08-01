@@ -1,4 +1,4 @@
-from menu import run
+import menu
 
 if __name__ == "__main__":
-    run()
+    menu.run()
