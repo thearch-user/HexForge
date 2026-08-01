@@ -1,5 +1,6 @@
 import math
 import os
+import sys
 import random
 import pygame
 
@@ -421,7 +422,13 @@ _texture_generators = {
 
 TEXTURES = {}
 
-CACHE_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'texture_cache')
+def _cache_dir():
+    if getattr(sys, "frozen", False):
+        return os.path.join(os.path.dirname(sys.executable), 'texture_cache')
+    return os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'texture_cache')
+
+
+CACHE_DIR = _cache_dir()
 
 def get_texture(name):
     if name not in TEXTURES:

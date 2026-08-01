@@ -1,8 +1,16 @@
 import json
 import os
+import sys
 import copy
 
-SAVE_FILE = os.path.join(os.path.dirname(__file__), "save_data.json")
+
+def _state_dir():
+    if getattr(sys, "frozen", False):
+        return os.path.dirname(sys.executable)
+    return os.path.dirname(os.path.abspath(__file__))
+
+
+SAVE_FILE = os.path.join(_state_dir(), "save_data.json")
 
 DEFAULT_STATE = {
     "money": 1000,

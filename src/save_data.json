@@ -1,8 +1,10 @@
 {
-  "money": 500,
+  "money": 0,
   "owned_weapons": [
     "AK47",
-    "Glock19"
+    "Glock19",
+    "Knife",
+    "Grenade"
   ],
   "equipped_primary": "AK47",
   "equipped_secondary": "Glock19",
