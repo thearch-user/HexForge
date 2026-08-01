@@ -438,7 +438,7 @@ def render_3d(surf, w, h):
         step = TEX_SIZE / wall_h
         tex_pos_arr = np.arange(num_px, dtype=np.float64) * step
         tex_pos_arr += (wall_top - half_h + wall_h // 2) * step
-        tex_y_arr = np.minimum(tex_pos_arr.astype(np.int32), TEX_SIZE - 1)
+        tex_y_arr = np.clip(tex_pos_arr.astype(np.int32), 0, TEX_SIZE - 1)
         col_data = tex_cols_np[tex_id % len(tex_cols_np), tex_x]
         pixels = col_data[tex_y_arr].astype(np.float64)
         pixels *= light
