@@ -70,7 +70,7 @@ A prebuilt, windowed executable is produced in `dist/HexForge.exe` — double-cl
 | Knife | Melee | 60 | 0.50s | — | — | — |
 | Grenade | Throwable | 50 | 0.80s | 1 | — | 1.5s fuse |
 
-Weapons are drawn with procedural polygon art and feature kickback, sway, muzzle flash, and shell ejection. Grenades arc through the air, bounce off walls, and deal distance-based splash damage.
+The AK47 uses the `texture_cache/Gun.png` sprite, while the other weapons are drawn with procedural polygon art; all feature kickback, sway, muzzle flash, and shell ejection. Grenades arc through the air, bounce off walls, and deal distance-based splash damage.
 
 ### Shop prices
 

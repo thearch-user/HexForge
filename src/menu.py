@@ -2,6 +2,28 @@ import math
 import sys
 import pygame as pg
 import game_state
+from textures import get_weapon_image
+
+_weapon_icon_cache = {}
+
+
+def _get_weapon_icon(name, target_w=170):
+    key = (name, target_w)
+    if key not in _weapon_icon_cache:
+        img = get_weapon_image(name)
+        if img is None:
+            _weapon_icon_cache[key] = False
+        else:
+            rect = img.get_bounding_rect(min_alpha=8)
+            if rect.width <= 0 or rect.height <= 0:
+                _weapon_icon_cache[key] = False
+            else:
+                weapon = img.subsurface(rect)
+                scale = target_w / weapon.get_width()
+                _weapon_icon_cache[key] = pg.transform.smoothscale(
+                    weapon, (target_w, max(1, int(weapon.get_height() * scale)))
+                )
+    return _weapon_icon_cache[key]
 
 pg.init()
 
@@ -438,13 +460,17 @@ def loadout_screen():
 
             icon_cx = rect.x + rect.w // 2
             icon_cy = rect.y + 180
-            if name == "AK47":
-                pg.draw.rect(screen, color, (icon_cx - 50, icon_cy - 8, 100, 16), border_radius=3)
-                pg.draw.rect(screen, (color[0] - 20, color[1] - 15, color[2] - 10), (icon_cx - 60, icon_cy + 5, 40, 20), border_radius=3)
-                pg.draw.rect(screen, (45, 42, 38), (icon_cx + 40, icon_cy - 6, 30, 12), border_radius=2)
-            elif name == "Glock19":
-                pg.draw.rect(screen, color, (icon_cx - 35, icon_cy - 10, 70, 18), border_radius=3)
-                pg.draw.rect(screen, (color[0] - 10, color[1] - 10, color[2] - 8), (icon_cx - 25, icon_cy + 5, 25, 28), border_radius=3)
+            if name in ("AK47", "Glock19"):
+                weapon_icon = _get_weapon_icon("Gun" if name == "AK47" else "Glock19")
+                if weapon_icon:
+                    screen.blit(weapon_icon, (icon_cx - weapon_icon.get_width() // 2, icon_cy - weapon_icon.get_height() // 2))
+                elif name == "AK47":
+                    pg.draw.rect(screen, color, (icon_cx - 50, icon_cy - 8, 100, 16), border_radius=3)
+                    pg.draw.rect(screen, (color[0] - 20, color[1] - 15, color[2] - 10), (icon_cx - 60, icon_cy + 5, 40, 20), border_radius=3)
+                    pg.draw.rect(screen, (45, 42, 38), (icon_cx + 40, icon_cy - 6, 30, 12), border_radius=2)
+                else:
+                    pg.draw.rect(screen, color, (icon_cx - 35, icon_cy - 10, 70, 18), border_radius=3)
+                    pg.draw.rect(screen, (color[0] - 10, color[1] - 10, color[2] - 8), (icon_cx - 25, icon_cy + 5, 25, 28), border_radius=3)
             elif name == "Knife":
                 pts = [(icon_cx, icon_cy - 40), (icon_cx + 5, icon_cy - 38), (icon_cx + 3, icon_cy + 15), (icon_cx - 3, icon_cy + 15)]
                 pg.draw.polygon(screen, color, pts)

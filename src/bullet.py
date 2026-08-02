@@ -3,6 +3,30 @@ import random
 import pygame as pg
 
 from config import SCREEN_WIDTH, SCREEN_HEIGHT
+from textures import get_weapon_image
+
+_bullet_cache = {}
+
+
+def _get_bullet_surface(target_h):
+    target_h = max(4, int(target_h))
+    if target_h not in _bullet_cache:
+        if len(_bullet_cache) > 64:
+            _bullet_cache.clear()
+        img = get_weapon_image("bullet")
+        if img is None:
+            _bullet_cache[target_h] = None
+        else:
+            rect = img.get_bounding_rect(min_alpha=8)
+            if rect.width <= 0 or rect.height <= 0:
+                _bullet_cache[target_h] = None
+            else:
+                b = img.subsurface(rect)
+                scale = target_h / b.get_height()
+                _bullet_cache[target_h] = pg.transform.smoothscale(
+                    b, (max(1, int(b.get_width() * scale)), target_h)
+                )
+    return _bullet_cache[target_h]
 
 
 class Bullet:
@@ -79,16 +103,16 @@ class Bullet:
         half_fov = math.radians(fov / 2)
         screen_x = int((diff / half_fov) * (SCREEN_WIDTH // 2) + SCREEN_WIDTH // 2)
         screen_h = int(SCREEN_HEIGHT / dist * 0.15)
-        screen_y = SCREEN_HEIGHT // 2 - screen_h // 2
 
         if 0 <= screen_x < SCREEN_WIDTH:
             is_hit = not self.alive and self.hit_pos
-            if is_hit:
-                c = (255, 120, 50)
-                screen_h = int(screen_h * 0.5)
+            size = int(screen_h * 0.5) if is_hit else max(6, screen_h // 2)
+            bullet_surf = _get_bullet_surface(size)
+            if bullet_surf is not None:
+                screen.blit(bullet_surf, (screen_x - bullet_surf.get_width() // 2, SCREEN_HEIGHT // 2 - bullet_surf.get_height() // 2))
             else:
-                c = (255, 220, 80)
-            pg.draw.rect(screen, c, (screen_x - 1, screen_y + screen_h // 2, 3, max(1, screen_h // 2)))
+                c = (255, 120, 50) if is_hit else (255, 220, 80)
+                pg.draw.rect(screen, c, (screen_x - 1, SCREEN_HEIGHT // 2 - size // 2, 3, max(1, size)))
 
 
 class Shell:

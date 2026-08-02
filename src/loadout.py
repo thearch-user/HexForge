@@ -1,6 +1,27 @@
 import math
 import random
 import pygame as pg
+from textures import get_weapon_image
+
+_weapon_cache = {}
+
+def _get_weapon_surface(name, target_w, target_h):
+    key = (name, target_w, target_h)
+    if key not in _weapon_cache:
+        img = get_weapon_image(name)
+        if img is None:
+            _weapon_cache[key] = None
+        else:
+            rect = img.get_bounding_rect(min_alpha=8)
+            if rect.width <= 0 or rect.height <= 0:
+                _weapon_cache[key] = None
+            else:
+                weapon = img.subsurface(rect)
+                scale = min(target_w / weapon.get_width(), target_h / weapon.get_height())
+                tw = max(1, int(weapon.get_width() * scale))
+                th = max(1, int(weapon.get_height() * scale))
+                _weapon_cache[key] = pg.transform.smoothscale(weapon, (tw, th))
+    return _weapon_cache[key]
 
 
 class BaseWeapon:
@@ -122,6 +143,19 @@ class AK47(BaseWeapon):
     def draw(self, screen, width, height):
         sway_x = math.sin(pg.time.get_ticks() * 0.002) * 1.5 + self.bob_offset
         sway_y = math.sin(pg.time.get_ticks() * 0.003) * 2 + self.kickback * 1.5
+
+        gun_surf = _get_weapon_surface("Gun", int(width * 0.45), int(height * 0.52))
+        if gun_surf is not None:
+            gx = width // 2 - int(gun_surf.get_width() * 0.35) + int(sway_x)
+            gy = height - gun_surf.get_height() + int(sway_y)
+            screen.blit(gun_surf, (gx, gy))
+        else:
+            self._draw_polygon_ak47(screen, width, height, sway_x, sway_y)
+
+        self.draw_muzzle(screen)
+        self.draw_reload_bar(screen, width, height)
+
+    def _draw_polygon_ak47(self, screen, width, height, sway_x, sway_y):
         bx = width // 2 + sway_x
         by = height - 140 + sway_y
 
@@ -170,9 +204,6 @@ class AK47(BaseWeapon):
         pg.draw.rect(screen, (50, 45, 40), (bx + 40, by - 48, 8, 4))
         pg.draw.rect(screen, (70, 65, 58), (bx + 41, by - 47, 6, 2))
 
-        self.draw_muzzle(screen)
-        self.draw_reload_bar(screen, width, height)
-
 
 class Glock19(BaseWeapon):
     def __init__(self):
@@ -198,6 +229,19 @@ class Glock19(BaseWeapon):
     def draw(self, screen, width, height):
         sway_x = math.sin(pg.time.get_ticks() * 0.002) * 1.2 + self.bob_offset * 0.8
         sway_y = math.sin(pg.time.get_ticks() * 0.003) * 1.5 + self.kickback * 1.2
+
+        gun_surf = _get_weapon_surface("Glock19", int(width * 0.4), int(height * 0.48))
+        if gun_surf is not None:
+            gx = width // 2 + 40 - int(gun_surf.get_width() * 0.4) + int(sway_x)
+            gy = height - gun_surf.get_height() + int(sway_y)
+            screen.blit(gun_surf, (gx, gy))
+        else:
+            self._draw_polygon_glock19(screen, width, height, sway_x, sway_y)
+
+        self.draw_muzzle(screen)
+        self.draw_reload_bar(screen, width, height)
+
+    def _draw_polygon_glock19(self, screen, width, height, sway_x, sway_y):
         bx = width // 2 + sway_x + 20
         by = height - 100 + sway_y
 
@@ -230,9 +274,6 @@ class Glock19(BaseWeapon):
 
         self._draw_part(screen, [(bx + 4, by - 46), (bx + 8, by - 46), (bx + 8, by - 44), (bx + 4, by - 44)], (42, 42, 45))
         self._draw_part(screen, [(bx + 42, by - 46), (bx + 46, by - 46), (bx + 46, by - 44), (bx + 42, by - 44)], (42, 42, 45))
-
-        self.draw_muzzle(screen)
-        self.draw_reload_bar(screen, width, height)
 
 
 class Knife(BaseWeapon):

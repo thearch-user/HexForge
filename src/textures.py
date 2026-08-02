@@ -442,4 +442,16 @@ def get_texture(name):
         TEXTURES[name] = surf
     return TEXTURES[name]
 
+WEAPON_IMAGES = {}
+
+def get_weapon_image(name):
+    if name not in WEAPON_IMAGES:
+        path = os.path.join(CACHE_DIR, f'{name}.png')
+        if os.path.exists(path):
+            surf = pygame.image.load(path).convert_alpha()
+        else:
+            surf = None
+        WEAPON_IMAGES[name] = surf
+    return WEAPON_IMAGES[name]
+
 TEXTURE_NAMES = list(_texture_generators.keys())
