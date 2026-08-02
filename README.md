@@ -134,6 +134,58 @@ A minimap in the top-left shows the layout, your position/direction, and color-c
 
 Progress persists to `src/save_data.json` when run from source (or next to the executable in a frozen build): money, owned weapons, grenade count, and purchased upgrades.
 
+## Roadmap
+
+A growing list of planned content and features. Everything here is scheduled for upcoming releases — nothing is guaranteed to ship exactly as described.
+
+### Planned weapons
+
+| Weapon | Type | Damage | Fire Rate | Mag | Notes |
+|---|---|---|---|---|---|
+| Shotgun | Pump-Action | 80 (8 pellets x 10) | 1.0s | 6 | Wide spread, short range; devastating up close |
+| SMG | Auto SMG | 18 | 0.06s | 32 | High fire rate, low damage per shot, high recoil |
+| Sniper Rifle | Bolt-Action | 150 | 1.4s | 5 | High zoom scope, heavy recoil, penetrates enemies |
+| Rocket Launcher | Explosive | 120 | 1.2s | 1 | Slow projectile with splash damage and self-damage |
+| Flamethrower | Fire | 15 | 0.05s | 60 | Continuous stream, sets enemies ablaze (DoT) |
+| Revolver | Six-Shooter | 55 | 0.35s | 6 | Powerful, precise, quick fan-fire while jumping |
+| Katana | Melee | 90 | 0.45s | — | Fast sweep attack that can deflect enemy shots |
+| Dual Pistols | Dual-Wield | 20 each | 0.12s | 30 | Two triggers alternate fire; inaccurate when moving |
+| Crossbow | Ranged | 70 | 0.9s | 1 | Silent, retrievable bolts; can pin enemies to walls |
+| Laser Rifle | Energy | 40 | 0.20s | 24 | Hitscan beam, no bullet drop, heat-overheat mechanic |
+
+### Planned maps
+
+| Map | Theme | Description |
+|---|---|---|
+| The Foundry | Industrial | Molten lava chasms, blast furnaces, and catwalk platforms over fire pools |
+| Cold Storage | Frozen Vault | Icy corridors, slippery floors, and frozen water hazards |
+| The Catacombs | Ancient Ruins | Crumbling stone tombs, trap floors, and a sealed crypt boss arena |
+| Overgrown Labs | Abandoned Research | Glass-walled labs, plant-choked rooms, and a malfunctioning reactor core |
+| Hover City | Futuristic Skyline | Floating platforms over an endless void; falling = instant respawn |
+| Death Match Arena | Competitive | Symmetrical map built for PvP and time-trial modes |
+| The Bunker | Military | Multi-level bunker with pillboxes, air vents, and a central elevator shaft |
+| Temple of the Sun | Desert | Sun-drenched sandstone temple with pressure-plate traps and a treasure vault |
+
+### Planned ores, pickups & interactables
+
+- **New ores** — gold, crystal, plasma, and rune deposits scattered across maps that can be mined for bonus cash and crafting materials.
+- **Pickups** — armor vests, medkits, ammo crates, speed boots, shield cells, and temporary "rage" power-ups.
+- **Vendors & crafting stations** — repair benches, ammo printers, and upgrade forges that let you spend ores mid-run.
+- **Explosive barrels** — shootable environmental hazards that chain-react.
+
+### Planned gameplay & systems
+
+- **Modern 3D "fashion" renderer** — migrate from the Wolfenstein-style raycaster to a Fortnite-like cell-shaded, vibrant, character-customization-driven renderer (see the rendering note above).
+- **Boss battles** — multi-phase arena bosses at the end of each map.
+- **Enemy variety** — rushers, spitters, shielded soldiers, turrets, and flying drones.
+- **Procedural map seeds** — shareable seed strings so players can compare dungeons.
+- **Difficulty settings** — Casual, Standard, and Nightmare modes.
+- **New game modes** — endless survival, arena challenges, and speedrun timers.
+- **Leaderboards & stats** — persistent kill/death tracking and global leaderboard support.
+- **Multiplayer (long-term)** — co-op and PvP deathmatch via the `server/` scaffolding.
+- **Audio enhancements** — positional audio, reverb in large rooms, and dynamic music that escalates during combat.
+- **Controller support** — gamepad bindings and aim assist.
+
 ## Technical Details
 
 | Parameter | Value |
