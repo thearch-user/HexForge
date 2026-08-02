@@ -2,6 +2,8 @@
 
 A Wolfenstein 3D-style first-person shooter written in Python with **pygame** and **numpy**. It runs a classic DDA raycasting engine, procedurally generates its textures, audio, and dungeon layouts at runtime, and wraps it all in a shop / loadout / wave-based progression loop. No external assets are required — everything is created on first launch.
 
+> **Rendering roadmap:** we are currently shipping with a classic **Wolfenstein 3D** raycaster, and we are planning to migrate to a modern, **Fortnite-like 3D "fashion" style renderer** (cell-shaded, vibrant, character-customization driven visuals) down the line.
+
 ## Features
 
 - **Raycasting renderer** — per-pixel textured walls, perspective-correct floor/ceiling casting, distance fog, side-based shading, and a vignette effect (numpy-accelerated).
