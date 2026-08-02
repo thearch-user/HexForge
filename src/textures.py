@@ -444,11 +444,27 @@ def get_texture(name):
 
 WEAPON_IMAGES = {}
 
+
+def _key_out_background(surf, bg_threshold=14):
+    import numpy as np
+    arr = pygame.surfarray.pixels3d(surf)
+    lum = np.max(arr, axis=2).astype(np.int16)
+    alpha = np.clip((lum - bg_threshold) * 60, 0, 255).astype(np.uint8)
+    pygame.surfarray.pixels_alpha(surf)[:] = alpha
+    del arr
+    return surf
+
+
 def get_weapon_image(name):
     if name not in WEAPON_IMAGES:
         path = os.path.join(CACHE_DIR, f'{name}.png')
         if os.path.exists(path):
-            surf = pygame.image.load(path).convert_alpha()
+            surf = pygame.image.load(path)
+            if surf.get_flags() & pygame.SRCALPHA:
+                surf = surf.convert_alpha()
+            else:
+                surf = surf.convert_alpha()
+                _key_out_background(surf)
         else:
             surf = None
         WEAPON_IMAGES[name] = surf

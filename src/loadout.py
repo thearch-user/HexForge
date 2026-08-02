@@ -383,13 +383,22 @@ class Grenade(BaseWeapon):
         self.throw_cooldown = max(0, self.throw_cooldown - dt)
 
     def draw(self, screen, width, height):
-        bx = width // 2 + 80
-        by = height - 100
-
         sway_x = math.sin(pg.time.get_ticks() * 0.002) * 2 + self.bob_offset * 0.6
         sway_y = math.sin(pg.time.get_ticks() * 0.003) * 1.5
-        bx += int(sway_x)
-        by += int(sway_y)
+
+        grenade_surf = _get_weapon_surface("grenade", int(width * 0.28), int(height * 0.34))
+        if grenade_surf is not None:
+            gx = width // 2 + 40 - int(grenade_surf.get_width() * 0.5) + int(sway_x)
+            gy = height - grenade_surf.get_height() + int(sway_y)
+            screen.blit(grenade_surf, (gx, gy))
+        else:
+            self._draw_polygon_grenade(screen, width, height, sway_x, sway_y)
+
+        self.draw_reload_bar(screen, width, height)
+
+    def _draw_polygon_grenade(self, screen, width, height, sway_x, sway_y):
+        bx = width // 2 + 80 + int(sway_x)
+        by = height - 100 + int(sway_y)
 
         body = [
             (bx - 16, by - 20), (bx + 16, by - 20),
@@ -412,8 +421,6 @@ class Grenade(BaseWeapon):
 
         lever = [(bx - 2, by - 32), (bx + 4, by - 32), (bx + 2, by - 24), (bx - 4, by - 24)]
         self._draw_part(screen, lever, (130, 125, 110), (90, 85, 75))
-
-        self.draw_reload_bar(screen, width, height)
 
 
 class ShellEject:

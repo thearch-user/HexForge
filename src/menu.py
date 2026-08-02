@@ -476,10 +476,14 @@ def loadout_screen():
                 pg.draw.polygon(screen, color, pts)
                 pg.draw.rect(screen, (100, 72, 40), (icon_cx - 8, icon_cy + 15, 16, 25), border_radius=2)
             elif name == "Grenade":
-                pg.draw.rect(screen, color, (icon_cx - 14, icon_cy - 15, 28, 30), border_radius=6)
-                pg.draw.rect(screen, (90, 85, 70), (icon_cx - 8, icon_cy - 22, 16, 8), border_radius=2)
-                for i in range(3):
-                    pg.draw.line(screen, (55, 70, 42), (icon_cx - 12, icon_cy - 12 + i * 10), (icon_cx + 12, icon_cy - 12 + i * 10), 1)
+                grenade_icon = _get_weapon_icon("grenade", target_w=90)
+                if grenade_icon:
+                    screen.blit(grenade_icon, (icon_cx - grenade_icon.get_width() // 2, icon_cy - grenade_icon.get_height() // 2))
+                else:
+                    pg.draw.rect(screen, color, (icon_cx - 14, icon_cy - 15, 28, 30), border_radius=6)
+                    pg.draw.rect(screen, (90, 85, 70), (icon_cx - 8, icon_cy - 22, 16, 8), border_radius=2)
+                    for i in range(3):
+                        pg.draw.line(screen, (55, 70, 42), (icon_cx - 12, icon_cy - 12 + i * 10), (icon_cx + 12, icon_cy - 12 + i * 10), 1)
 
             if is_owned and upgrades_list:
                 up_text = [u for u in upgrades_list if name in u or (name == "Grenade" and "Grenade" in u)]
