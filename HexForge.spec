@@ -7,7 +7,7 @@ a = Analysis(
     ['src/main.py'],
     pathex=[src_dir],
     binaries=[],
-    datas=[],
+    datas=[('texture_cache/*.png', 'texture_cache')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},

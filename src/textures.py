@@ -428,17 +428,38 @@ def _cache_dir():
     return os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'texture_cache')
 
 
+def _bundled_dir():
+    if getattr(sys, "frozen", False):
+        meipass = getattr(sys, "_MEIPASS", None)
+        if meipass:
+            return os.path.join(meipass, 'texture_cache')
+    return None
+
+
 CACHE_DIR = _cache_dir()
+BUNDLED_DIR = _bundled_dir()
+
+
+def _find_image(name):
+    path = os.path.join(CACHE_DIR, f'{name}.png')
+    if os.path.exists(path):
+        return path
+    if BUNDLED_DIR:
+        path = os.path.join(BUNDLED_DIR, f'{name}.png')
+        if os.path.exists(path):
+            return path
+    return None
+
 
 def get_texture(name):
     if name not in TEXTURES:
-        cached_path = os.path.join(CACHE_DIR, f'{name}.png')
-        if os.path.exists(cached_path):
-            surf = pygame.image.load(cached_path).convert()
+        path = _find_image(name)
+        if path is not None:
+            surf = pygame.image.load(path).convert()
         else:
             surf = _texture_generators[name]()
             os.makedirs(CACHE_DIR, exist_ok=True)
-            pygame.image.save(surf, cached_path)
+            pygame.image.save(surf, os.path.join(CACHE_DIR, f'{name}.png'))
         TEXTURES[name] = surf
     return TEXTURES[name]
 
@@ -457,8 +478,8 @@ def _key_out_background(surf, bg_threshold=14):
 
 def get_weapon_image(name):
     if name not in WEAPON_IMAGES:
-        path = os.path.join(CACHE_DIR, f'{name}.png')
-        if os.path.exists(path):
+        path = _find_image(name)
+        if path is not None:
             surf = pygame.image.load(path)
             if surf.get_flags() & pygame.SRCALPHA:
                 surf = surf.convert_alpha()

@@ -312,9 +312,6 @@ class Knife(BaseWeapon):
                 self.swinging = False
 
     def draw(self, screen, width, height):
-        bx = width // 2
-        by = height // 2
-
         bob = self.bob_offset * 0.5
         sway_x = math.sin(pg.time.get_ticks() * 0.002) * 3 + bob
         sway_y = math.sin(pg.time.get_ticks() * 0.003) * 2
@@ -323,6 +320,18 @@ class Knife(BaseWeapon):
             swing = math.sin(self.swing_phase) * 60
             sway_x += swing * 0.5
             sway_y -= abs(swing) * 0.3
+
+        knife_surf = _get_weapon_surface("Knife", int(width * 0.5), int(height * 0.7))
+        if knife_surf is not None:
+            gx = width // 2 + 120 - int(knife_surf.get_width() * 0.5) + int(sway_x)
+            gy = height // 2 + 40 - int(knife_surf.get_height() * 0.5) + int(sway_y)
+            screen.blit(knife_surf, (gx, gy))
+        else:
+            self._draw_polygon_knife(screen, width, height, sway_x, sway_y)
+
+    def _draw_polygon_knife(self, screen, width, height, sway_x, sway_y):
+        bx = width // 2
+        by = height // 2
 
         ox = bx + 120 + sway_x
         oy = by + 120 + sway_y
