@@ -2,7 +2,7 @@
 
 A Wolfenstein 3D-style first-person shooter written in Python with **pygame** and **numpy**. It runs a classic DDA raycasting engine, procedurally generates its textures, audio, and dungeon layouts at runtime, and wraps it all in a shop / loadout / wave-based progression loop. No external assets are required — everything is created on first launch.
 
-> **Rendering roadmap:** we are currently shipping with a classic **Wolfenstein 3D** raycaster, and we are planning to migrate to a modern, **Fortnite-like 3D "fashion" style renderer** (cell-shaded, vibrant, character-customization driven visuals) down the line.
+> **The Future of HexForge:** we are currently shipping with a classic **Wolfenstein 3D raycaster**, but we are planning to migrate to a modern, **Fortnite-style renderer** — a vibrant, cell-shaded, character-customization-driven 3D look with built-in building, emotes, and cosmetic loadouts. See [The Future of HexForge](#the-future-of-hexforge) below.
 
 ## Features
 
@@ -134,57 +134,83 @@ A minimap in the top-left shows the layout, your position/direction, and color-c
 
 Progress persists to `src/save_data.json` when run from source (or next to the executable in a frozen build): money, owned weapons, grenade count, and purchased upgrades.
 
-## Roadmap
+## The Future of HexForge
 
-A growing list of planned content and features. Everything here is scheduled for upcoming releases — nothing is guaranteed to ship exactly as described.
+HexForge started life as a love letter to classic raycasters, and that's where it will stay today. But the renderer, the world, and the way you look in it are all being rethought. Here is what's coming.
 
-### Planned weapons
+### Rendering: from Wolfenstein 3D to a Fortnite-style engine
 
-| Weapon | Type | Damage | Fire Rate | Mag | Notes |
-|---|---|---|---|---|---|
-| Shotgun | Pump-Action | 80 (8 pellets x 10) | 1.0s | 6 | Wide spread, short range; devastating up close |
-| SMG | Auto SMG | 18 | 0.06s | 32 | High fire rate, low damage per shot, high recoil |
-| Sniper Rifle | Bolt-Action | 150 | 1.4s | 5 | High zoom scope, heavy recoil, penetrates enemies |
-| Rocket Launcher | Explosive | 120 | 1.2s | 1 | Slow projectile with splash damage and self-damage |
-| Flamethrower | Fire | 15 | 0.05s | 60 | Continuous stream, sets enemies ablaze (DoT) |
-| Revolver | Six-Shooter | 55 | 0.35s | 6 | Powerful, precise, quick fan-fire while jumping |
-| Katana | Melee | 90 | 0.45s | — | Fast sweep attack that can deflect enemy shots |
-| Dual Pistols | Dual-Wield | 20 each | 0.12s | 30 | Two triggers alternate fire; inaccurate when moving |
-| Crossbow | Ranged | 70 | 0.9s | 1 | Silent, retrievable bolts; can pin enemies to walls |
-| Laser Rifle | Energy | 40 | 0.20s | 24 | Hitscan beam, no bullet drop, heat-overheat mechanic |
+The biggest change on the horizon is a full migration from the current **Wolfenstein 3D raycaster** to a modern, **Fortnite-inspired renderer**:
 
-### Planned maps
+- **Cell-shaded, vibrant visuals** — bold outlines, saturated materials, and clean lighting instead of flat textured columns.
+- **Third-person, buildable world** — the classic wall-crawler view gives way to a smooth, camera-driven 3D perspective with on-the-fly building mechanics.
+- **Character customization** — skins, outfits, emotes, gliders, and cosmetics that make *you* the center of the storm.
+- **Physics-driven map events** — dynamic storm circles, destructible cover, and ziplines across the map.
+- **The road there** — we will ship the Fortnite-style renderer incrementally: first a modernized lighting and material pass on the current engine, then a proper 3D geometry pipeline, and finally the full cosmetic and building systems.
+
+### Future maps
+
+Our hand-picked slate of new battlefields (each gets its own theme, hazards, and secrets):
 
 | Map | Theme | Description |
 |---|---|---|
-| The Foundry | Industrial | Molten lava chasms, blast furnaces, and catwalk platforms over fire pools |
-| Cold Storage | Frozen Vault | Icy corridors, slippery floors, and frozen water hazards |
-| The Catacombs | Ancient Ruins | Crumbling stone tombs, trap floors, and a sealed crypt boss arena |
-| Overgrown Labs | Abandoned Research | Glass-walled labs, plant-choked rooms, and a malfunctioning reactor core |
-| Hover City | Futuristic Skyline | Floating platforms over an endless void; falling = instant respawn |
-| Death Match Arena | Competitive | Symmetrical map built for PvP and time-trial modes |
-| The Bunker | Military | Multi-level bunker with pillboxes, air vents, and a central elevator shaft |
-| Temple of the Sun | Desert | Sun-drenched sandstone temple with pressure-plate traps and a treasure vault |
+| Neon Undergrid | Cyberpunk Metro | Rain-slick subway tunnels, flickering holograms, and an abandoned train that ferries players between sectors |
+| Emberfall Peaks | Volcanic Alpine | A snow-capped volcano riddled with lava vents; erupting geysers launch players sky-high |
+| Ghost Marina | Abandoned Coast | A foggy fishing town where the tide rises and falls, flooding the market street every few minutes |
+| Crystal Caverns | Bioluminescent | Glowing crystal shards that shatter for cash, hidden echo-pools that mask footsteps |
+| Sky Harbor | Floating Airport | Suspended terminals over open air, connected by gusts of wind and glass bridges that can be shot out |
+| The Vault | Bank Heist | A gold-filled mega-vault with laser-grid corridors, a drillable wall, and an armory worth raiding |
+| Solar Fields | Greenhouse Dome | A glass-domed farm colony; sprinklers slow you down and sunlight beams burn anyone in their path |
+| Blackout Prison | Maximum Security | A riot-torn supermax with electrified fences, guard towers, and a lockdown mode that seals the exits |
+| Nuclear Fallout | Post-Apocalyptic Wasteland | A bombed-out city under permanent ashfall; radiation zones tick your HP, crumbling buildings, and a sealed bunker stocked with the best loot |
 
-### Planned ores, pickups & interactables
+### Future weapons
 
-- **New ores** — gold, crystal, plasma, and rune deposits scattered across maps that can be mined for bonus cash and crafting materials.
-- **Pickups** — armor vests, medkits, ammo crates, speed boots, shield cells, and temporary "rage" power-ups.
-- **Vendors & crafting stations** — repair benches, ammo printers, and upgrade forges that let you spend ores mid-run.
-- **Explosive barrels** — shootable environmental hazards that chain-react.
+A brand-new arsenal we have in the works (beyond the current AK47 / Glock19 / Knife / Grenade lineup). It's split into two lanes: **grounded, realistic firearms** and **speculative sci-fi hardware**.
 
-### Planned gameplay & systems
+### Realistic weapons
 
-- **Modern 3D "fashion" renderer** — migrate from the Wolfenstein-style raycaster to a Fortnite-like cell-shaded, vibrant, character-customization-driven renderer (see the rendering note above).
+Guns you'd actually find in a gun safe, with real-world handling and ballistics:
+
+| Weapon | Type | Damage | Fire Rate | Mag | Notes |
+|---|---|---|---|---|---|
+| M4A1 Carbine | Assault Rifle | 28 | 0.09s | 30 | Full-auto with tight burst control; the modern upgrade to the AK47 |
+| Mossberg 590 Shotgun | Pump-Action | 85 (9 pellets x ~9) | 0.9s | 8 | Pump the slide after every shot; devastating at point blank |
+| UMP45 SMG | Submachine Gun | 22 | 0.07s | 25 | Low recoil, steady spray; reliable room-clearer |
+| Desert Eagle | Heavy Pistol | 60 | 0.3s | 7 | .50 AE kick; punches through light cover |
+| Barrett M82 | Anti-Material Rifle | 160 | 1.5s | 10 | .50 BMG that drops enemies in one; huge muzzle blast |
+| M16A4 | Burst Rifle | 32 | 0.13s (3-round burst) | 30 | Three-round burst, high first-shot accuracy |
+| Kriss Vector | SMG | 25 | 0.05s | 30 | Hyper-cyclic rate; recoil cancels via its delayed blowback design |
+| M79 Thumper | Grenade Launcher | 110 (splash) | 1.2s | 1 | Lobbed 40mm rounds with arcing trajectories |
+| MK2 Smoke Grenade | Utility | — | 0.8s | 1 | Covers your movement and marks positions for airstrikes |
+
+### Sci-fi weapons
+
+Speculative hardware for the far-future side of the roadmap:
+
+| Weapon | Type | Damage | Fire Rate | Notes |
+|---|---|---|---|---|
+| Railgun | Energy | 200 | 1.6s | Charge-up shot that pierces enemies **and** walls; overcharge for extra damage |
+| Minigun | Heavy Auto | 20 | 0.05s | Spools up before firing; wildly inaccurate until fully spun |
+| Plasma Cutter | Energy | 45 | 0.35s | Fires a bouncing energy disc that ricochets off walls up to 5 times |
+| Cryo Blaster | Freeze | 10 | 0.15s | Chills targets on hit; fully frozen enemies shatter into shards |
+| Gravity Hammer | Melee | 120 | 0.7s | Heavy swing that sends enemies flying and creates a knockback shockwave |
+| Arc Thrower | Electric | 35 | 0.4s | Chain lightning that jumps between nearby enemies |
+| Sawblade Launcher | Utility | 70 | 1.0s | Spinning blades that embed in walls and can be picked back up |
+| The Longshot | Sniper | 180 | 1.8s | Massive zoom, hitscan, and a lens-flare that gives your position away |
+
+### Other long-term plans
+
 - **Boss battles** — multi-phase arena bosses at the end of each map.
 - **Enemy variety** — rushers, spitters, shielded soldiers, turrets, and flying drones.
 - **Procedural map seeds** — shareable seed strings so players can compare dungeons.
-- **Difficulty settings** — Casual, Standard, and Nightmare modes.
-- **New game modes** — endless survival, arena challenges, and speedrun timers.
+- **New game modes** — survival, arena challenges, battle-royale-style storm circles, and speedrun timers.
+- **Multiplayer (long-term)** — co-op and PvP via the `server/` scaffolding, including squad play and build battles.
 - **Leaderboards & stats** — persistent kill/death tracking and global leaderboard support.
-- **Multiplayer (long-term)** — co-op and PvP deathmatch via the `server/` scaffolding.
 - **Audio enhancements** — positional audio, reverb in large rooms, and dynamic music that escalates during combat.
 - **Controller support** — gamepad bindings and aim assist.
+
+> Nothing here is guaranteed to ship exactly as described — think of it as the storm cloud on the horizon, and we're heading straight into it.
 
 ## Technical Details
 
