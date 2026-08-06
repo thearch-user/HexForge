@@ -1,0 +1,15 @@
+{
+  "money": 0,
+  "owned_weapons": [
+    "AK47",
+    "Glock19",
+    "Knife",
+    "Grenade"
+  ],
+  "equipped_primary": "AK47",
+  "equipped_secondary": "Glock19",
+  "equipped_melee": "Knife",
+  "equipped_explosive": "Grenade",
+  "grenades": 3,
+  "upgrades": {}
+}
