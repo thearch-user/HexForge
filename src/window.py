@@ -59,17 +59,9 @@ bullets = []
 grenades = []
 thrown_grenades = []
 
-floor_tiles = game_map.get_floor_tiles()
-random.shuffle(floor_tiles)
 targets = []
-placed = 0
-for tx, ty in floor_tiles:
-    if placed >= 8:
-        break
-    if abs(tx - int(spawn[0])) < 5 and abs(ty - int(spawn[1])) < 5:
-        continue
-    targets.append(Target(tx + 0.5, ty + 0.5, placed, wave=wave))
-    placed += 1
+for i, (tx, ty) in enumerate(pick_enemy_spawns(px, py, 8)):
+    targets.append(Target(tx + 0.5, ty + 0.5, i, wave=wave))
 
 prev_ammo_str = None
 prev_reserve_str = None
@@ -855,19 +847,31 @@ def draw_scope(surf, w, h):
 running = True
 
 
-def spawn_targets():
-    global targets
+def pick_enemy_spawns(px, py, count=8, min_dist=2.5, max_dist=6.5):
     floor_tiles = game_map.get_floor_tiles()
     random.shuffle(floor_tiles)
-    targets = []
-    placed = 0
+    near = []
+    far = []
     for tx, ty in floor_tiles:
-        if placed >= 8:
-            break
-        if abs(tx - int(spawn[0])) < 5 and abs(ty - int(spawn[1])) < 5:
-            continue
-        targets.append(Target(tx + 0.5, ty + 0.5, placed, wave=wave))
-        placed += 1
+        dx = (tx + 0.5) - px
+        dy = (ty + 0.5) - py
+        dist = math.hypot(dx, dy)
+        if len(near) < count and min_dist <= dist <= max_dist:
+            near.append((tx, ty))
+        elif len(far) < count and dist > min_dist:
+            far.append((tx, ty))
+    picks = near
+    if len(picks) < count:
+        picks += far[:count - len(picks)]
+    random.shuffle(picks)
+    return picks[:count]
+
+
+def spawn_targets():
+    global targets
+    targets = []
+    for i, (tx, ty) in enumerate(pick_enemy_spawns(px, py, 8)):
+        targets.append(Target(tx + 0.5, ty + 0.5, i, wave=wave))
 
 
 def run():

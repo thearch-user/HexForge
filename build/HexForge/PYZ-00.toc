@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ('C:\\Users\\srajp\\PROJ\\HexForge\\build\\HexForge\\PYZ-00.pyz',
+=======
+('C:\\Users\\srajp\\HexForge\\build\\HexForge\\PYZ-00.pyz',
+>>>>>>> 7d92dc4dbe289288da131eadc2e39b62d6622ba5
  [('OpenGL',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\OpenGL\\__init__.py',
    'PYMODULE'),
@@ -746,7 +750,11 @@
   ('bisect',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\bisect.py',
    'PYMODULE'),
+<<<<<<< HEAD
   ('bullet', 'C:\\Users\\srajp\\PROJ\\HexForge\\src\\bullet.py', 'PYMODULE'),
+=======
+  ('bullet', 'C:\\Users\\srajp\\HexForge\\src\\bullet.py', 'PYMODULE'),
+>>>>>>> 7d92dc4dbe289288da131eadc2e39b62d6622ba5
   ('bz2',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\bz2.py',
    'PYMODULE'),
@@ -801,7 +809,11 @@
   ('concurrent.futures.thread',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\concurrent\\futures\\thread.py',
    'PYMODULE'),
+<<<<<<< HEAD
   ('config', 'C:\\Users\\srajp\\PROJ\\HexForge\\src\\config.py', 'PYMODULE'),
+=======
+  ('config', 'C:\\Users\\srajp\\HexForge\\src\\config.py', 'PYMODULE'),
+>>>>>>> 7d92dc4dbe289288da131eadc2e39b62d6622ba5
   ('configparser',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\configparser.py',
    'PYMODULE'),
@@ -934,9 +946,13 @@
   ('ftplib',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\ftplib.py',
    'PYMODULE'),
+<<<<<<< HEAD
   ('game_state',
    'C:\\Users\\srajp\\PROJ\\HexForge\\src\\game_state.py',
    'PYMODULE'),
+=======
+  ('game_state', 'C:\\Users\\srajp\\HexForge\\src\\game_state.py', 'PYMODULE'),
+>>>>>>> 7d92dc4dbe289288da131eadc2e39b62d6622ba5
   ('getopt',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\getopt.py',
    'PYMODULE'),
@@ -1126,15 +1142,24 @@
   ('json.scanner',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\json\\scanner.py',
    'PYMODULE'),
+<<<<<<< HEAD
   ('loadout', 'C:\\Users\\srajp\\PROJ\\HexForge\\src\\loadout.py', 'PYMODULE'),
+=======
+  ('loadout', 'C:\\Users\\srajp\\HexForge\\src\\loadout.py', 'PYMODULE'),
+>>>>>>> 7d92dc4dbe289288da131eadc2e39b62d6622ba5
   ('logging',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\logging\\__init__.py',
    'PYMODULE'),
   ('lzma',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\lzma.py',
    'PYMODULE'),
+<<<<<<< HEAD
   ('map', 'C:\\Users\\srajp\\PROJ\\HexForge\\src\\map.py', 'PYMODULE'),
   ('menu', 'C:\\Users\\srajp\\PROJ\\HexForge\\src\\menu.py', 'PYMODULE'),
+=======
+  ('map', 'C:\\Users\\srajp\\HexForge\\src\\map.py', 'PYMODULE'),
+  ('menu', 'C:\\Users\\srajp\\HexForge\\src\\menu.py', 'PYMODULE'),
+>>>>>>> 7d92dc4dbe289288da131eadc2e39b62d6622ba5
   ('mimetypes',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\mimetypes.py',
    'PYMODULE'),
@@ -2168,7 +2193,11 @@
   ('socketserver',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\socketserver.py',
    'PYMODULE'),
+<<<<<<< HEAD
   ('sound', 'C:\\Users\\srajp\\PROJ\\HexForge\\src\\sound.py', 'PYMODULE'),
+=======
+  ('sound', 'C:\\Users\\srajp\\HexForge\\src\\sound.py', 'PYMODULE'),
+>>>>>>> 7d92dc4dbe289288da131eadc2e39b62d6622ba5
   ('ssl',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\ssl.py',
    'PYMODULE'),
@@ -2190,6 +2219,7 @@
   ('tarfile',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\tarfile.py',
    'PYMODULE'),
+<<<<<<< HEAD
   ('target', 'C:\\Users\\srajp\\PROJ\\HexForge\\src\\target.py', 'PYMODULE'),
   ('tempfile',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\tempfile.py',
@@ -2197,6 +2227,13 @@
   ('textures',
    'C:\\Users\\srajp\\PROJ\\HexForge\\src\\textures.py',
    'PYMODULE'),
+=======
+  ('target', 'C:\\Users\\srajp\\HexForge\\src\\target.py', 'PYMODULE'),
+  ('tempfile',
+   'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\tempfile.py',
+   'PYMODULE'),
+  ('textures', 'C:\\Users\\srajp\\HexForge\\src\\textures.py', 'PYMODULE'),
+>>>>>>> 7d92dc4dbe289288da131eadc2e39b62d6622ba5
   ('textwrap',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\textwrap.py',
    'PYMODULE'),
@@ -2299,7 +2336,11 @@
   ('wheel.wheelfile',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\wheel\\wheelfile.py',
    'PYMODULE'),
+<<<<<<< HEAD
   ('window', 'C:\\Users\\srajp\\PROJ\\HexForge\\src\\window.py', 'PYMODULE'),
+=======
+  ('window', 'C:\\Users\\srajp\\HexForge\\src\\window.py', 'PYMODULE'),
+>>>>>>> 7d92dc4dbe289288da131eadc2e39b62d6622ba5
   ('xml',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\xml\\__init__.py',
    'PYMODULE'),

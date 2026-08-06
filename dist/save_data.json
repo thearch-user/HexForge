@@ -1,8 +1,17 @@
 {
+<<<<<<< HEAD
   "money": 500,
   "owned_weapons": [
     "AK47",
     "Glock19"
+=======
+  "money": 0,
+  "owned_weapons": [
+    "AK47",
+    "Glock19",
+    "Knife",
+    "Grenade"
+>>>>>>> 7d92dc4dbe289288da131eadc2e39b62d6622ba5
   ],
   "equipped_primary": "AK47",
   "equipped_secondary": "Glock19",

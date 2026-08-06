@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ('C:\\Users\\srajp\\PROJ\\HexForge\\build\\HexForge\\HexForge.pkg',
+=======
+('C:\\Users\\srajp\\HexForge\\build\\HexForge\\HexForge.pkg',
+>>>>>>> 7d92dc4dbe289288da131eadc2e39b62d6622ba5
  {'BINARY': True,
   'DATA': True,
   'EXECUTABLE': True,
@@ -10,6 +14,7 @@
   'SYMLINK': False},
  [('pyi-contents-directory _internal', '', 'OPTION'),
   ('PYZ-00.pyz',
+<<<<<<< HEAD
    'C:\\Users\\srajp\\PROJ\\HexForge\\build\\HexForge\\PYZ-00.pyz',
    'PYZ'),
   ('struct',
@@ -26,6 +31,24 @@
    'PYMODULE'),
   ('pyimod04_pywin32',
    'C:\\Users\\srajp\\PROJ\\HexForge\\build\\HexForge\\localpycs\\pyimod04_pywin32.pyc',
+=======
+   'C:\\Users\\srajp\\HexForge\\build\\HexForge\\PYZ-00.pyz',
+   'PYZ'),
+  ('struct',
+   'C:\\Users\\srajp\\HexForge\\build\\HexForge\\localpycs\\struct.pyc',
+   'PYMODULE'),
+  ('pyimod01_archive',
+   'C:\\Users\\srajp\\HexForge\\build\\HexForge\\localpycs\\pyimod01_archive.pyc',
+   'PYMODULE'),
+  ('pyimod02_importers',
+   'C:\\Users\\srajp\\HexForge\\build\\HexForge\\localpycs\\pyimod02_importers.pyc',
+   'PYMODULE'),
+  ('pyimod03_ctypes',
+   'C:\\Users\\srajp\\HexForge\\build\\HexForge\\localpycs\\pyimod03_ctypes.pyc',
+   'PYMODULE'),
+  ('pyimod04_pywin32',
+   'C:\\Users\\srajp\\HexForge\\build\\HexForge\\localpycs\\pyimod04_pywin32.pyc',
+>>>>>>> 7d92dc4dbe289288da131eadc2e39b62d6622ba5
    'PYMODULE'),
   ('pyiboot01_bootstrap',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\PyInstaller\\loader\\pyiboot01_bootstrap.py',
@@ -45,9 +68,30 @@
   ('pyi_rth_setuptools',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_setuptools.py',
    'PYSOURCE'),
+<<<<<<< HEAD
   ('main', 'C:\\Users\\srajp\\PROJ\\HexForge\\src\\main.py', 'PYSOURCE'),
   ('OpenGL\\DLLS\\freeglut32.vc9.dll',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\OpenGL\\DLLS\\freeglut32.vc9.dll',
+=======
+  ('main', 'C:\\Users\\srajp\\HexForge\\src\\main.py', 'PYSOURCE'),
+  ('OpenGL\\DLLS\\freeglut64.vc9.dll',
+   'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\OpenGL\\DLLS\\freeglut64.vc9.dll',
+   'BINARY'),
+  ('OpenGL\\DLLS\\freeglut32.vc14.dll',
+   'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\OpenGL\\DLLS\\freeglut32.vc14.dll',
+   'BINARY'),
+  ('OpenGL\\DLLS\\gle64.vc10.dll',
+   'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\OpenGL\\DLLS\\gle64.vc10.dll',
+   'BINARY'),
+  ('OpenGL\\DLLS\\freeglut64.vc10.dll',
+   'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\OpenGL\\DLLS\\freeglut64.vc10.dll',
+   'BINARY'),
+  ('OpenGL\\DLLS\\gle32.vc14.dll',
+   'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\OpenGL\\DLLS\\gle32.vc14.dll',
+   'BINARY'),
+  ('OpenGL\\DLLS\\freeglut32.vc10.dll',
+   'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\OpenGL\\DLLS\\freeglut32.vc10.dll',
+>>>>>>> 7d92dc4dbe289288da131eadc2e39b62d6622ba5
    'BINARY'),
   ('OpenGL\\DLLS\\gle32.vc9.dll',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\OpenGL\\DLLS\\gle32.vc9.dll',
@@ -58,6 +102,7 @@
   ('OpenGL\\DLLS\\gle32.vc10.dll',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\OpenGL\\DLLS\\gle32.vc10.dll',
    'BINARY'),
+<<<<<<< HEAD
   ('OpenGL\\DLLS\\freeglut32.vc14.dll',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\OpenGL\\DLLS\\freeglut32.vc14.dll',
    'BINARY'),
@@ -66,10 +111,15 @@
    'BINARY'),
   ('OpenGL\\DLLS\\gle32.vc14.dll',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\OpenGL\\DLLS\\gle32.vc14.dll',
+=======
+  ('OpenGL\\DLLS\\freeglut32.vc9.dll',
+   'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\OpenGL\\DLLS\\freeglut32.vc9.dll',
+>>>>>>> 7d92dc4dbe289288da131eadc2e39b62d6622ba5
    'BINARY'),
   ('OpenGL\\DLLS\\gle64.vc14.dll',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\OpenGL\\DLLS\\gle64.vc14.dll',
    'BINARY'),
+<<<<<<< HEAD
   ('OpenGL\\DLLS\\freeglut64.vc10.dll',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\OpenGL\\DLLS\\freeglut64.vc10.dll',
    'BINARY'),
@@ -108,10 +158,27 @@
    'BINARY'),
   ('libtiff-5.dll',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame\\libtiff-5.dll',
+=======
+  ('OpenGL\\DLLS\\freeglut64.vc14.dll',
+   'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\OpenGL\\DLLS\\freeglut64.vc14.dll',
+   'BINARY'),
+  ('python312.dll',
+   'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\python312.dll',
+   'BINARY'),
+  ('numpy.libs\\libscipy_openblas64_-b788215d9d47792bcba3a2e2a7114320.dll',
+   'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\numpy.libs\\libscipy_openblas64_-b788215d9d47792bcba3a2e2a7114320.dll',
+   'BINARY'),
+  ('numpy.libs\\msvcp140-a4c2229bdc2a2a630acdc095b4d86008.dll',
+   'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\numpy.libs\\msvcp140-a4c2229bdc2a2a630acdc095b4d86008.dll',
+   'BINARY'),
+  ('portmidi.dll',
+   'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame\\portmidi.dll',
+>>>>>>> 7d92dc4dbe289288da131eadc2e39b62d6622ba5
    'BINARY'),
   ('libwebp-7.dll',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame\\libwebp-7.dll',
    'BINARY'),
+<<<<<<< HEAD
   ('zlib1.dll',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame\\zlib1.dll',
    'BINARY'),
@@ -123,6 +190,31 @@
    'BINARY'),
   ('portmidi.dll',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame\\portmidi.dll',
+=======
+  ('libogg-0.dll',
+   'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame\\libogg-0.dll',
+   'BINARY'),
+  ('libmodplug-1.dll',
+   'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame\\libmodplug-1.dll',
+   'BINARY'),
+  ('SDL2_mixer.dll',
+   'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame\\SDL2_mixer.dll',
+   'BINARY'),
+  ('libopusfile-0.dll',
+   'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame\\libopusfile-0.dll',
+   'BINARY'),
+  ('libtiff-5.dll',
+   'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame\\libtiff-5.dll',
+   'BINARY'),
+  ('freetype.dll',
+   'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame\\freetype.dll',
+   'BINARY'),
+  ('zlib1.dll',
+   'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame\\zlib1.dll',
+   'BINARY'),
+  ('SDL2.dll',
+   'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame\\SDL2.dll',
+>>>>>>> 7d92dc4dbe289288da131eadc2e39b62d6622ba5
    'BINARY'),
   ('libjpeg-9.dll',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame\\libjpeg-9.dll',
@@ -130,11 +222,22 @@
   ('SDL2_image.dll',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame\\SDL2_image.dll',
    'BINARY'),
+<<<<<<< HEAD
   ('SDL2.dll',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame\\SDL2.dll',
    'BINARY'),
   ('libmodplug-1.dll',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame\\libmodplug-1.dll',
+=======
+  ('SDL2_ttf.dll',
+   'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame\\SDL2_ttf.dll',
+   'BINARY'),
+  ('libpng16-16.dll',
+   'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame\\libpng16-16.dll',
+   'BINARY'),
+  ('libopus-0.dll',
+   'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame\\libopus-0.dll',
+>>>>>>> 7d92dc4dbe289288da131eadc2e39b62d6622ba5
    'BINARY'),
   ('unicodedata.pyd',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\DLLs\\unicodedata.pyd',
@@ -340,11 +443,25 @@
   ('pygame\\base.cp312-win_amd64.pyd',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame\\base.cp312-win_amd64.pyd',
    'EXTENSION'),
+<<<<<<< HEAD
   ('MSVCR100.dll', 'C:\\Windows\\system32\\MSVCR100.dll', 'BINARY'),
+=======
+>>>>>>> 7d92dc4dbe289288da131eadc2e39b62d6622ba5
   ('api-ms-win-crt-environment-l1-1-0.dll',
    'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
    'Toolkit\\api-ms-win-crt-environment-l1-1-0.dll',
    'BINARY'),
+<<<<<<< HEAD
+=======
+  ('api-ms-win-crt-string-l1-1-0.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-crt-string-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-crt-math-l1-1-0.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-crt-math-l1-1-0.dll',
+   'BINARY'),
+>>>>>>> 7d92dc4dbe289288da131eadc2e39b62d6622ba5
   ('api-ms-win-crt-heap-l1-1-0.dll',
    'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
    'Toolkit\\api-ms-win-crt-heap-l1-1-0.dll',
@@ -353,6 +470,7 @@
    'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
    'Toolkit\\api-ms-win-crt-stdio-l1-1-0.dll',
    'BINARY'),
+<<<<<<< HEAD
   ('api-ms-win-crt-math-l1-1-0.dll',
    'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
    'Toolkit\\api-ms-win-crt-math-l1-1-0.dll',
@@ -360,10 +478,13 @@
   ('VCRUNTIME140.dll',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\VCRUNTIME140.dll',
    'BINARY'),
+=======
+>>>>>>> 7d92dc4dbe289288da131eadc2e39b62d6622ba5
   ('api-ms-win-crt-runtime-l1-1-0.dll',
    'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
    'Toolkit\\api-ms-win-crt-runtime-l1-1-0.dll',
    'BINARY'),
+<<<<<<< HEAD
   ('api-ms-win-crt-string-l1-1-0.dll',
    'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
    'Toolkit\\api-ms-win-crt-string-l1-1-0.dll',
@@ -376,14 +497,23 @@
    'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
    'Toolkit\\api-ms-win-crt-process-l1-1-0.dll',
    'BINARY'),
+=======
+  ('VCRUNTIME140.dll',
+   'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\VCRUNTIME140.dll',
+   'BINARY'),
+  ('MSVCR100.dll', 'C:\\Windows\\system32\\MSVCR100.dll', 'BINARY'),
+>>>>>>> 7d92dc4dbe289288da131eadc2e39b62d6622ba5
   ('api-ms-win-crt-locale-l1-1-0.dll',
    'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
    'Toolkit\\api-ms-win-crt-locale-l1-1-0.dll',
    'BINARY'),
+<<<<<<< HEAD
   ('api-ms-win-crt-filesystem-l1-1-0.dll',
    'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
    'Toolkit\\api-ms-win-crt-filesystem-l1-1-0.dll',
    'BINARY'),
+=======
+>>>>>>> 7d92dc4dbe289288da131eadc2e39b62d6622ba5
   ('api-ms-win-crt-time-l1-1-0.dll',
    'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
    'Toolkit\\api-ms-win-crt-time-l1-1-0.dll',
@@ -392,8 +522,22 @@
    'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
    'Toolkit\\api-ms-win-crt-convert-l1-1-0.dll',
    'BINARY'),
+<<<<<<< HEAD
   ('VCRUNTIME140_1.dll',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\VCRUNTIME140_1.dll',
+=======
+  ('api-ms-win-crt-process-l1-1-0.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-crt-process-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-crt-conio-l1-1-0.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-crt-conio-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-crt-filesystem-l1-1-0.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-crt-filesystem-l1-1-0.dll',
+>>>>>>> 7d92dc4dbe289288da131eadc2e39b62d6622ba5
    'BINARY'),
   ('api-ms-win-crt-utility-l1-1-0.dll',
    'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
@@ -403,15 +547,27 @@
    'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
    'Toolkit\\api-ms-win-crt-private-l1-1-0.dll',
    'BINARY'),
+<<<<<<< HEAD
+=======
+  ('VCRUNTIME140_1.dll',
+   'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\VCRUNTIME140_1.dll',
+   'BINARY'),
+  ('pygame\\SDL2.dll',
+   'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame\\SDL2.dll',
+   'BINARY'),
+>>>>>>> 7d92dc4dbe289288da131eadc2e39b62d6622ba5
   ('pygame\\libopus-0.dll',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame\\libopus-0.dll',
    'BINARY'),
   ('pygame\\libogg-0.dll',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame\\libogg-0.dll',
    'BINARY'),
+<<<<<<< HEAD
   ('pygame\\SDL2.dll',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame\\SDL2.dll',
    'BINARY'),
+=======
+>>>>>>> 7d92dc4dbe289288da131eadc2e39b62d6622ba5
   ('pygame\\zlib1.dll',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame\\zlib1.dll',
    'BINARY'),
@@ -430,12 +586,21 @@
   ('python3.dll',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\python3.dll',
    'BINARY'),
+<<<<<<< HEAD
   ('pygame\\libpng16-16.dll',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame\\libpng16-16.dll',
    'BINARY'),
   ('pygame\\SDL2_image.dll',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame\\SDL2_image.dll',
    'BINARY'),
+=======
+  ('pygame\\SDL2_image.dll',
+   'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame\\SDL2_image.dll',
+   'BINARY'),
+  ('pygame\\libpng16-16.dll',
+   'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame\\libpng16-16.dll',
+   'BINARY'),
+>>>>>>> 7d92dc4dbe289288da131eadc2e39b62d6622ba5
   ('pygame\\SDL2_mixer.dll',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame\\SDL2_mixer.dll',
    'BINARY'),
@@ -449,6 +614,7 @@
    'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
    'Toolkit\\ucrtbase.dll',
    'BINARY'),
+<<<<<<< HEAD
   ('api-ms-win-core-file-l1-1-0.dll',
    'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
    'Toolkit\\api-ms-win-core-file-l1-1-0.dll',
@@ -520,11 +686,17 @@
   ('api-ms-win-core-processthreads-l1-1-0.dll',
    'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
    'Toolkit\\api-ms-win-core-processthreads-l1-1-0.dll',
+=======
+  ('api-ms-win-core-datetime-l1-1-0.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-core-datetime-l1-1-0.dll',
+>>>>>>> 7d92dc4dbe289288da131eadc2e39b62d6622ba5
    'BINARY'),
   ('api-ms-win-core-file-l1-2-0.dll',
    'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
    'Toolkit\\api-ms-win-core-file-l1-2-0.dll',
    'BINARY'),
+<<<<<<< HEAD
   ('api-ms-win-core-console-l1-1-0.dll',
    'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
    'Toolkit\\api-ms-win-core-console-l1-1-0.dll',
@@ -540,15 +712,60 @@
   ('api-ms-win-core-errorhandling-l1-1-0.dll',
    'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
    'Toolkit\\api-ms-win-core-errorhandling-l1-1-0.dll',
+=======
+  ('api-ms-win-core-handle-l1-1-0.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-core-handle-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-util-l1-1-0.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-core-util-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-rtlsupport-l1-1-0.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-core-rtlsupport-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-synch-l1-1-0.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-core-synch-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-heap-l1-1-0.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-core-heap-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-file-l2-1-0.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-core-file-l2-1-0.dll',
+>>>>>>> 7d92dc4dbe289288da131eadc2e39b62d6622ba5
    'BINARY'),
   ('api-ms-win-core-profile-l1-1-0.dll',
    'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
    'Toolkit\\api-ms-win-core-profile-l1-1-0.dll',
    'BINARY'),
+<<<<<<< HEAD
+=======
+  ('api-ms-win-core-interlocked-l1-1-0.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-core-interlocked-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-file-l1-1-0.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-core-file-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-processthreads-l1-1-1.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-core-processthreads-l1-1-1.dll',
+   'BINARY'),
+  ('api-ms-win-core-timezone-l1-1-0.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-core-timezone-l1-1-0.dll',
+   'BINARY'),
+>>>>>>> 7d92dc4dbe289288da131eadc2e39b62d6622ba5
   ('api-ms-win-core-localization-l1-2-0.dll',
    'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
    'Toolkit\\api-ms-win-core-localization-l1-2-0.dll',
    'BINARY'),
+<<<<<<< HEAD
   ('api-ms-win-core-datetime-l1-1-0.dll',
    'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
    'Toolkit\\api-ms-win-core-datetime-l1-1-0.dll',
@@ -598,6 +815,56 @@
   ('texture_cache\\wood.png',
    'C:\\Users\\srajp\\PROJ\\HexForge\\texture_cache\\wood.png',
    'DATA'),
+=======
+  ('api-ms-win-core-string-l1-1-0.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-core-string-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-sysinfo-l1-1-0.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-core-sysinfo-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-debug-l1-1-0.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-core-debug-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-errorhandling-l1-1-0.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-core-errorhandling-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-console-l1-1-0.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-core-console-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-processthreads-l1-1-0.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-core-processthreads-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-fibers-l1-1-0.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-core-fibers-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-processenvironment-l1-1-0.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-core-processenvironment-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-memory-l1-1-0.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-core-memory-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-namedpipe-l1-1-0.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-core-namedpipe-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-libraryloader-l1-1-0.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-core-libraryloader-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-synch-l1-2-0.dll',
+   'C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance '
+   'Toolkit\\api-ms-win-core-synch-l1-2-0.dll',
+   'BINARY'),
+>>>>>>> 7d92dc4dbe289288da131eadc2e39b62d6622ba5
   ('pygame\\freesansbold.ttf',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pygame\\freesansbold.ttf',
    'DATA'),
@@ -607,6 +874,7 @@
   ('OpenGL\\DLLS\\gle_COPYING.src',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\OpenGL\\DLLS\\gle_COPYING.src',
    'DATA'),
+<<<<<<< HEAD
   ('OpenGL\\DLLS\\gle_AUTHORS',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\OpenGL\\DLLS\\gle_AUTHORS',
    'DATA'),
@@ -622,15 +890,37 @@
   ('OpenGL\\DLLS\\freeglut_COPYING.txt',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\OpenGL\\DLLS\\freeglut_COPYING.txt',
    'DATA'),
+=======
+  ('OpenGL\\DLLS\\gle_COPYING',
+   'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\OpenGL\\DLLS\\gle_COPYING',
+   'DATA'),
+  ('OpenGL\\DLLS\\gle_AUTHORS',
+   'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\OpenGL\\DLLS\\gle_AUTHORS',
+   'DATA'),
+  ('OpenGL\\DLLS\\GLE_WIN32_README.txt',
+   'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\OpenGL\\DLLS\\GLE_WIN32_README.txt',
+   'DATA'),
+  ('OpenGL\\DLLS\\freeglut_COPYING.txt',
+   'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\OpenGL\\DLLS\\freeglut_COPYING.txt',
+   'DATA'),
+  ('OpenGL\\DLLS\\freeglut_README.txt',
+   'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\OpenGL\\DLLS\\freeglut_README.txt',
+   'DATA'),
+>>>>>>> 7d92dc4dbe289288da131eadc2e39b62d6622ba5
   ('setuptools\\_vendor\\jaraco\\text\\Lorem ipsum.txt',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\setuptools\\_vendor\\jaraco\\text\\Lorem '
    'ipsum.txt',
    'DATA'),
+<<<<<<< HEAD
   ('importlib_metadata-7.2.1.dist-info\\METADATA',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\importlib_metadata-7.2.1.dist-info\\METADATA',
    'DATA'),
   ('importlib_metadata-7.2.1.dist-info\\WHEEL',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\importlib_metadata-7.2.1.dist-info\\WHEEL',
+=======
+  ('importlib_metadata-7.2.1.dist-info\\RECORD',
+   'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\importlib_metadata-7.2.1.dist-info\\RECORD',
+>>>>>>> 7d92dc4dbe289288da131eadc2e39b62d6622ba5
    'DATA'),
   ('importlib_metadata-7.2.1.dist-info\\top_level.txt',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\importlib_metadata-7.2.1.dist-info\\top_level.txt',
@@ -638,6 +928,7 @@
   ('importlib_metadata-7.2.1.dist-info\\INSTALLER',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\importlib_metadata-7.2.1.dist-info\\INSTALLER',
    'DATA'),
+<<<<<<< HEAD
   ('importlib_metadata-7.2.1.dist-info\\LICENSE',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\importlib_metadata-7.2.1.dist-info\\LICENSE',
    'DATA'),
@@ -698,21 +989,56 @@
   ('wheel-0.46.3.dist-info\\WHEEL',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\wheel-0.46.3.dist-info\\WHEEL',
    'DATA'),
+=======
+  ('importlib_metadata-7.2.1.dist-info\\WHEEL',
+   'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\importlib_metadata-7.2.1.dist-info\\WHEEL',
+   'DATA'),
+  ('importlib_metadata-7.2.1.dist-info\\METADATA',
+   'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\importlib_metadata-7.2.1.dist-info\\METADATA',
+   'DATA'),
+  ('importlib_metadata-7.2.1.dist-info\\LICENSE',
+   'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\importlib_metadata-7.2.1.dist-info\\LICENSE',
+   'DATA'),
+  ('numpy-2.5.1.dist-info\\licenses\\numpy\\_core\\src\\highway\\LICENSE',
+   'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\numpy-2.5.1.dist-info\\licenses\\numpy\\_core\\src\\highway\\LICENSE',
+   'DATA'),
+>>>>>>> 7d92dc4dbe289288da131eadc2e39b62d6622ba5
   ('numpy-2.5.1.dist-info\\licenses\\numpy\\random\\src\\pcg64\\LICENSE.md',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\numpy-2.5.1.dist-info\\licenses\\numpy\\random\\src\\pcg64\\LICENSE.md',
    'DATA'),
   ('numpy-2.5.1.dist-info\\licenses\\numpy\\_core\\include\\numpy\\libdivide\\LICENSE.txt',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\numpy-2.5.1.dist-info\\licenses\\numpy\\_core\\include\\numpy\\libdivide\\LICENSE.txt',
    'DATA'),
+<<<<<<< HEAD
   ('numpy-2.5.1.dist-info\\licenses\\numpy\\_core\\src\\multiarray\\dragon4_LICENSE.txt',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\numpy-2.5.1.dist-info\\licenses\\numpy\\_core\\src\\multiarray\\dragon4_LICENSE.txt',
    'DATA'),
   ('numpy-2.5.1.dist-info\\licenses\\numpy\\random\\src\\splitmix64\\LICENSE.md',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\numpy-2.5.1.dist-info\\licenses\\numpy\\random\\src\\splitmix64\\LICENSE.md',
+=======
+  ('numpy-2.5.1.dist-info\\licenses\\numpy\\random\\src\\sfc64\\LICENSE.md',
+   'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\numpy-2.5.1.dist-info\\licenses\\numpy\\random\\src\\sfc64\\LICENSE.md',
+   'DATA'),
+  ('numpy-2.5.1.dist-info\\entry_points.txt',
+   'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\numpy-2.5.1.dist-info\\entry_points.txt',
+   'DATA'),
+  ('wheel-0.46.3.dist-info\\INSTALLER',
+   'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\wheel-0.46.3.dist-info\\INSTALLER',
+   'DATA'),
+  ('numpy-2.5.1.dist-info\\licenses\\numpy\\_core\\src\\npysort\\x86-simd-sort\\LICENSE.md',
+   'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\numpy-2.5.1.dist-info\\licenses\\numpy\\_core\\src\\npysort\\x86-simd-sort\\LICENSE.md',
+   'DATA'),
+  ('numpy-2.5.1.dist-info\\licenses\\numpy\\fft\\pocketfft\\LICENSE.md',
+   'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\numpy-2.5.1.dist-info\\licenses\\numpy\\fft\\pocketfft\\LICENSE.md',
+   'DATA'),
+  ('numpy-2.5.1.dist-info\\METADATA',
+   'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\numpy-2.5.1.dist-info\\METADATA',
+>>>>>>> 7d92dc4dbe289288da131eadc2e39b62d6622ba5
    'DATA'),
   ('numpy-2.5.1.dist-info\\INSTALLER',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\numpy-2.5.1.dist-info\\INSTALLER',
    'DATA'),
+<<<<<<< HEAD
   ('numpy-2.5.1.dist-info\\licenses\\numpy\\_core\\src\\common\\pythoncapi-compat\\COPYING',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\numpy-2.5.1.dist-info\\licenses\\numpy\\_core\\src\\common\\pythoncapi-compat\\COPYING',
    'DATA'),
@@ -727,12 +1053,72 @@
    'DATA'),
   ('numpy-2.5.1.dist-info\\licenses\\numpy\\_core\\src\\umath\\svml\\LICENSE',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\numpy-2.5.1.dist-info\\licenses\\numpy\\_core\\src\\umath\\svml\\LICENSE',
+=======
+  ('numpy-2.5.1.dist-info\\WHEEL',
+   'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\numpy-2.5.1.dist-info\\WHEEL',
+>>>>>>> 7d92dc4dbe289288da131eadc2e39b62d6622ba5
    'DATA'),
   ('wheel-0.46.3.dist-info\\METADATA',
    'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\wheel-0.46.3.dist-info\\METADATA',
    'DATA'),
+<<<<<<< HEAD
   ('base_library.zip',
    'C:\\Users\\srajp\\PROJ\\HexForge\\build\\HexForge\\base_library.zip',
+=======
+  ('numpy-2.5.1.dist-info\\licenses\\numpy\\_core\\src\\umath\\svml\\LICENSE',
+   'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\numpy-2.5.1.dist-info\\licenses\\numpy\\_core\\src\\umath\\svml\\LICENSE',
+   'DATA'),
+  ('numpy-2.5.1.dist-info\\licenses\\LICENSE.txt',
+   'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\numpy-2.5.1.dist-info\\licenses\\LICENSE.txt',
+   'DATA'),
+  ('numpy-2.5.1.dist-info\\licenses\\numpy\\ma\\LICENSE',
+   'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\numpy-2.5.1.dist-info\\licenses\\numpy\\ma\\LICENSE',
+   'DATA'),
+  ('numpy-2.5.1.dist-info\\licenses\\numpy\\_core\\src\\common\\pythoncapi-compat\\COPYING',
+   'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\numpy-2.5.1.dist-info\\licenses\\numpy\\_core\\src\\common\\pythoncapi-compat\\COPYING',
+   'DATA'),
+  ('wheel-0.46.3.dist-info\\RECORD',
+   'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\wheel-0.46.3.dist-info\\RECORD',
+   'DATA'),
+  ('numpy-2.5.1.dist-info\\licenses\\numpy\\linalg\\lapack_lite\\LICENSE.txt',
+   'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\numpy-2.5.1.dist-info\\licenses\\numpy\\linalg\\lapack_lite\\LICENSE.txt',
+   'DATA'),
+  ('numpy-2.5.1.dist-info\\DELVEWHEEL',
+   'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\numpy-2.5.1.dist-info\\DELVEWHEEL',
+   'DATA'),
+  ('numpy-2.5.1.dist-info\\RECORD',
+   'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\numpy-2.5.1.dist-info\\RECORD',
+   'DATA'),
+  ('numpy-2.5.1.dist-info\\licenses\\numpy\\random\\src\\philox\\LICENSE.md',
+   'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\numpy-2.5.1.dist-info\\licenses\\numpy\\random\\src\\philox\\LICENSE.md',
+   'DATA'),
+  ('wheel-0.46.3.dist-info\\entry_points.txt',
+   'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\wheel-0.46.3.dist-info\\entry_points.txt',
+   'DATA'),
+  ('wheel-0.46.3.dist-info\\WHEEL',
+   'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\wheel-0.46.3.dist-info\\WHEEL',
+   'DATA'),
+  ('numpy-2.5.1.dist-info\\licenses\\numpy\\_core\\src\\multiarray\\dragon4_LICENSE.txt',
+   'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\numpy-2.5.1.dist-info\\licenses\\numpy\\_core\\src\\multiarray\\dragon4_LICENSE.txt',
+   'DATA'),
+  ('numpy-2.5.1.dist-info\\licenses\\numpy\\random\\src\\distributions\\LICENSE.md',
+   'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\numpy-2.5.1.dist-info\\licenses\\numpy\\random\\src\\distributions\\LICENSE.md',
+   'DATA'),
+  ('wheel-0.46.3.dist-info\\licenses\\LICENSE.txt',
+   'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\wheel-0.46.3.dist-info\\licenses\\LICENSE.txt',
+   'DATA'),
+  ('numpy-2.5.1.dist-info\\licenses\\numpy\\random\\src\\splitmix64\\LICENSE.md',
+   'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\numpy-2.5.1.dist-info\\licenses\\numpy\\random\\src\\splitmix64\\LICENSE.md',
+   'DATA'),
+  ('numpy-2.5.1.dist-info\\licenses\\numpy\\random\\LICENSE.md',
+   'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\numpy-2.5.1.dist-info\\licenses\\numpy\\random\\LICENSE.md',
+   'DATA'),
+  ('numpy-2.5.1.dist-info\\licenses\\numpy\\random\\src\\mt19937\\LICENSE.md',
+   'C:\\Users\\srajp\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\numpy-2.5.1.dist-info\\licenses\\numpy\\random\\src\\mt19937\\LICENSE.md',
+   'DATA'),
+  ('base_library.zip',
+   'C:\\Users\\srajp\\HexForge\\build\\HexForge\\base_library.zip',
+>>>>>>> 7d92dc4dbe289288da131eadc2e39b62d6622ba5
    'DATA')],
  'python312.dll',
  False,
