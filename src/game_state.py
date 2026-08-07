@@ -3,8 +3,6 @@ import os
 import sys
 import copy
 
-<<<<<<< HEAD
-
 def _state_dir():
     if getattr(sys, "frozen", False):
         return os.path.dirname(sys.executable)
@@ -12,13 +10,6 @@ def _state_dir():
 
 
 SAVE_FILE = os.path.join(_state_dir(), "save_data.json")
-=======
-if getattr(sys, "frozen", False):
-    _save_dir = os.path.dirname(sys.executable)
-else:
-    _save_dir = os.path.dirname(os.path.abspath(__file__))
-SAVE_FILE = os.path.join(_save_dir, "save_data.json")
->>>>>>> 7d92dc4dbe289288da131eadc2e39b62d6622ba5
 
 DEFAULT_STATE = {
     "money": 1000,
