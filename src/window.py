@@ -59,7 +59,7 @@ bullets = []
 grenades = []
 thrown_grenades = []
 
-def pick_enemy_spawns(px, py, count=8, min_dist=2.5, max_dist=6.5):
+def pick_enemy_spawns(px, py, count=8, min_dist=12.0, max_dist=30.0):
     floor_tiles = game_map.get_floor_tiles()
     random.shuffle(floor_tiles)
     near = []
